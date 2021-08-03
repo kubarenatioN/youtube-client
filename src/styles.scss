@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root {
+  --accent-color: #2F80ED;
+  --card-bg-primary: #f1f1f1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+button{
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
+button.btn-primary {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+}
+
+.container{
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.btn-link {
+  display: inline-block;
+  color: #fff;
+  background-color: var(--accent-color);
+  padding: 7px 30px 6px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px var(--accent-color);
+}

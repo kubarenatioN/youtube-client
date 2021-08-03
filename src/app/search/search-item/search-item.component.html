@@ -1,1 +1,23 @@
-<p>search-item works!</p>
+<div class="video-card">
+  <img class="poster" [src]="video.snippet.thumbnails.medium.url" alt="Video Poster">
+  <div class="stats">
+    <div>
+      <img src="./assets/icons/eye.svg" alt="Views">
+      <span>{{video.statistics.viewCount}}</span>
+    </div>
+    <div>
+      <img src="./assets/icons/like.svg" alt="Likes">
+      <span>{{video.statistics.likeCount}}</span>
+    </div>
+    <div>
+      <img src="./assets/icons/dislike.svg" alt="Dislikes">
+      <span>{{video.statistics.dislikeCount}}</span>
+    </div>
+    <div>
+      <img src="./assets/icons/comment.svg" alt="Comments">
+      <span>{{video.statistics.commentCount}}</span>
+    </div>
+  </div>
+  <h4 class="title">{{video.snippet.title}}</h4>
+  <a class="more-link btn-link" routerLink="">More</a>
+</div>

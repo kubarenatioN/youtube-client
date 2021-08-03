@@ -20,7 +20,9 @@
         "airbnb-typescript/base"
       ],
       "rules": {
+        "arrow-parens": ["error", "as-needed"],
         "@typescript-eslint/semi": "off",
+        "@typescript-eslint/comma-dangle": "off",
         "import/prefer-default-export": "off",
         "@angular-eslint/directive-selector": [
           "error",

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IVideoItem } from 'src/app/models/video-item.model';
 
 @Component({
@@ -7,5 +7,5 @@ import { IVideoItem } from 'src/app/models/video-item.model';
   styleUrls: ['./search-item.component.scss'],
 })
 export class SearchItemComponent {
-  video?: IVideoItem
+  @Input() video!: IVideoItem
 }
