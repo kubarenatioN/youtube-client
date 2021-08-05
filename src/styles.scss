@@ -3,6 +3,11 @@
 :root {
   --accent-color: #2F80ED;
   --card-bg-primary: #f1f1f1;
+  --bg-grey-primary:#f1f1f1;
+  --red: #EB5757;
+  --green: #27AE60;
+  --yellow: #F2C94C;
+  --btn-primary-box-shadow: 0 2px 4px var(--accent-color);
 }
 
 body {
@@ -20,12 +25,29 @@ button.btn-primary {
   color: #fff;
   border: none;
 }
+button.btn-icon {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  > img {
+    display: block;
+  }
+}
+
+input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
 
 .container{
   max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
+  &--large{
+    max-width: 1600px;
+  }
 }
+
 
 h1,h2,h3,h4,h5,h6 {
   margin: 0;
@@ -42,5 +64,5 @@ a.btn-link {
   background-color: var(--accent-color);
   padding: 7px 30px 6px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px var(--accent-color);
+  box-shadow: var(--btn-primary-box-shadow);
 }

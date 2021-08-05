@@ -11,22 +11,28 @@ interface IVideoSnippet {
   channelId: string
   title: string
   description: string
-  thumbnails: {
-    default: IVideoThumbnail
-    medium: IVideoThumbnail
-    high: IVideoThumbnail
-    standard: IVideoThumbnail
-    maxres: IVideoThumbnail
-  }
+  thumbnails: IVideoThumbnailSet
   channelTitle: string
   tags: string[]
   categoryId: string
-  liveBroadcastContent: 'none' | string
-  localized: {
-    title: string
-    description: string
-  }
+  liveBroadcastContent: LiveBroadcast
+  localized: ILocalized
   defaultAudioLanguage: string
+}
+
+type LiveBroadcast = 'none' | 'yes'
+
+interface ILocalized {
+  title: string
+  description: string
+}
+
+interface IVideoThumbnailSet {
+  default: IVideoThumbnail
+  medium: IVideoThumbnail
+  high: IVideoThumbnail
+  standard: IVideoThumbnail
+  maxres: IVideoThumbnail
 }
 
 interface IVideoThumbnail {

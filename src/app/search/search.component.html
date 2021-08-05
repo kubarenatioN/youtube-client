@@ -1,2 +1,4 @@
-<app-sort></app-sort>
-<app-catalog></app-catalog>
+<app-sort
+  [isVisible]="isSortActive"
+  (sortVideos)="catalog.sortItems($event)"></app-sort>
+<app-catalog #catalog></app-catalog>

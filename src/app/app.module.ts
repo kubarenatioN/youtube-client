@@ -9,6 +9,9 @@ import { SortComponent } from './search/sort/sort.component';
 import { CatalogComponent } from './search/catalog/catalog.component';
 import { SearchItemComponent } from './search/search-item/search-item.component';
 import { SearchComponent } from './search/search.component';
+import { DateHighlighterDirective } from './directives/date-highlighter.directive';
+import { FilterByKeywordPipe } from './pipes/filter-by-keyword.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { SearchComponent } from './search/search.component';
     SortComponent,
     CatalogComponent,
     SearchItemComponent,
-    SearchComponent
+    SearchComponent,
+    DateHighlighterDirective,
+    FilterByKeywordPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,

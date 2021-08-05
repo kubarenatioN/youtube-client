@@ -7,11 +7,15 @@ import { IVideosResponse } from '../models/videos-response.model';
   providedIn: 'root'
 })
 export class SearchService {
+  private url = './assets/response.json'
+
+  videos = this.http.get<IVideosResponse>(this.url)
+
   constructor(
     private http: HttpClient
   ) {}
 
   getVideos(): Observable<IVideosResponse> {
-    return this.http.get<IVideosResponse>('./assets/response.json')
+    return this.http.get<IVideosResponse>(this.url)
   }
 }

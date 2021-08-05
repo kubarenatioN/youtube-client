@@ -1,4 +1,4 @@
-<div class="video-card">
+<div [appDateHighlighter]="video.snippet.publishedAt" class="video-card">
   <img class="poster" [src]="video.snippet.thumbnails.medium.url" alt="Video Poster">
   <div class="stats">
     <div>

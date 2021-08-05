@@ -1,30 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ISortOptions } from 'src/app/models/sort-options.model';
 import { IVideoItem } from 'src/app/models/video-item.model';
-import { IVideosResponse } from 'src/app/models/videos-response.model';
-import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss'],
 })
-export class CatalogComponent implements OnInit {
-  videosResponse?: IVideosResponse
+export class CatalogComponent {
+  sortOptions!: ISortOptions
+
+  initialVideos: IVideoItem[] = []
 
   videos: IVideoItem[] = []
 
-  constructor(
-    private searchService: SearchService
-  ) {}
-
-  ngOnInit(): void {
-    this.getVideos()
+  sortItems(options: ISortOptions) {
+    // console.log('sort items catalog', options)
+    this.sortOptions = options
+    this.videos = [...this.initialVideos]
   }
 
-  getVideos(): void {
-    this.searchService.getVideos().subscribe(data => {
-      this.videosResponse = data
-      this.videos = data.items
-    })
+  setData(items: IVideoItem[]) {
+    this.initialVideos = items
+    this.videos = items
   }
 }
