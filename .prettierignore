@@ -1,0 +1,6 @@
+# Ignore:
+src/polyfills.ts
+src/test.ts
+src/main.ts
+
+src/environments/**/**

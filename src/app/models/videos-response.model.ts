@@ -1,9 +1,9 @@
-import { IVideoItem } from './video-item.model';
+import { IVideoItem } from './video-item.model'
 
 export interface IVideosResponse {
   kind: string
   etag: string
-  pageInfo: IPageInfo,
+  pageInfo: IPageInfo
   items: IVideoItem[]
 }
 

@@ -8,7 +8,7 @@
     "extensions": [
       ".js",
       ".ts",
-      "html"
+      ".html"
     ]
   },
   "editor.codeActionsOnSave": {

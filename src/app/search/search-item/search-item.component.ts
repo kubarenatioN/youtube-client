@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { IVideoItem } from 'src/app/models/video-item.model';
+import { Component, Input } from '@angular/core'
+import { IVideoItem } from 'src/app/models/video-item.model'
 
 @Component({
   selector: 'app-search-item',

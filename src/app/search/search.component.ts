@@ -1,11 +1,11 @@
-import { Component, Input, ViewChild } from '@angular/core';
-import { CatalogComponent } from './catalog/catalog.component';
-import { SearchService } from './search.service';
+import { Component, Input, ViewChild } from '@angular/core'
+import { CatalogComponent } from './catalog/catalog.component'
+import { SearchService } from './search.service'
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
   @Input() isSortActive!: boolean
@@ -13,9 +13,7 @@ export class SearchComponent {
   @ViewChild(CatalogComponent)
   private catalog!: CatalogComponent
 
-  constructor(
-    private searchService: SearchService
-  ) {}
+  constructor(private searchService: SearchService) {}
 
   onSearch() {
     this.searchService.videos.subscribe(data => {

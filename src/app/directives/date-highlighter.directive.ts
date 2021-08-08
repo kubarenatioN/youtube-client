@@ -1,26 +1,21 @@
-import {
-  Directive, ElementRef, Input, OnInit, Renderer2
-} from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core'
 
 enum DateColors {
   Red = 'red',
   Green = 'green',
   Blue = 'blue',
-  Yellow = 'yellow'
+  Yellow = 'yellow',
 }
 
 @Directive({
-  selector: '[appDateHighlighter]'
+  selector: '[appDateHighlighter]',
 })
 export class DateHighlighterDirective implements OnInit {
   @Input() appDateHighlighter = ''
 
   private colorClass = DateColors.Yellow
 
-  constructor(
-    private el: ElementRef,
-    private renderer2: Renderer2
-  ) { }
+  constructor(private el: ElementRef, private renderer2: Renderer2) {}
 
   ngOnInit(): void {
     this.defineColor()

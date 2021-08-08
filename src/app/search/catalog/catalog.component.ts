@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { ISortOptions } from 'src/app/models/sort-options.model';
-import { IVideoItem } from 'src/app/models/video-item.model';
+import { Component } from '@angular/core'
+import { ISortOptions } from 'src/app/models/sort-options.model'
+import { IVideoItem } from 'src/app/models/video-item.model'
 
 @Component({
   selector: 'app-catalog',

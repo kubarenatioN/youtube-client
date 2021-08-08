@@ -7,7 +7,10 @@
       [ngClass]="{
         desc: classes.activeDate && classes.order === 'desc',
         asc: classes.activeDate && classes.order === 'asc'
-      }">Date</button>
+      }"
+    >
+      Date
+    </button>
     <button
       class="btn-primary"
       (click)="setSortType(2)"
@@ -20,14 +23,17 @@
         class="btn-primary"
         (click)="setFilterByWord()"
         [class.active]="classes.activeByKeywords"
-        >Key word</button>
+      >
+        Key word
+      </button>
       <input
         class="keyword-filter"
         type="text"
         #keywordsInput
         [disabled]="!classes.activeByKeywords"
         (input)="filterByWord($event)"
-        [value]="classes.activeByKeywords ? keywordsInput.value : ''">
+        [value]="classes.activeByKeywords ? keywordsInput.value : ''"
+      />
     </div>
   </div>
 </div>

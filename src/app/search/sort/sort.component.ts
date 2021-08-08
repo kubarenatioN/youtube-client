@@ -1,7 +1,5 @@
-import {
-  Component, EventEmitter, Input, OnInit, Output
-} from '@angular/core';
-import { ISortOptions, SortOrder, SortType } from 'src/app/models/sort-options.model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
+import { ISortOptions, SortOrder, SortType } from 'src/app/models/sort-options.model'
 
 interface ISortButtonsStyles {
   activeDate: boolean
@@ -23,9 +21,9 @@ export class SortComponent implements OnInit {
   sortOptions: ISortOptions = {
     sort: {
       type: SortType.None,
-      order: 'desc'
+      order: 'desc',
     },
-    keywords: ''
+    keywords: '',
   }
 
   classes!: ISortButtonsStyles
@@ -39,9 +37,7 @@ export class SortComponent implements OnInit {
     const { type } = this.sortOptions.sort
     const { order } = this.sortOptions.sort
     if (type === sortType) {
-      this.sortOptions.sort.order = order === 'desc'
-        ? 'asc'
-        : 'desc'
+      this.sortOptions.sort.order = order === 'desc' ? 'asc' : 'desc'
     } else {
       this.sortOptions.sort.type = sortType
       this.sortOptions.sort.order = 'desc'
@@ -69,7 +65,7 @@ export class SortComponent implements OnInit {
       activeDate: this.sortOptions.sort.type === SortType.Date,
       activeViewsCount: this.sortOptions.sort.type === SortType.ViewsCount,
       activeByKeywords: this.sortOptions.sort.type === SortType.KeyWord,
-      order: this.sortOptions.sort.order
+      order: this.sortOptions.sort.order,
     }
   }
 }

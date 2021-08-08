@@ -1,24 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 :root {
-  --accent-color: #2F80ED;
+  --accent-color: #2f80ed;
   --card-bg-primary: #f1f1f1;
-  --bg-grey-primary:#f1f1f1;
-  --red: #EB5757;
-  --green: #27AE60;
-  --yellow: #F2C94C;
+  --bg-grey-primary: #f1f1f1;
+  --red: #eb5757;
+  --green: #27ae60;
+  --yellow: #f2c94c;
   --btn-primary-box-shadow: 0 2px 4px var(--accent-color);
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
 }
-button{
+button {
   cursor: pointer;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 button.btn-primary {
   background-color: var(--accent-color);
@@ -35,21 +35,25 @@ button.btn-icon {
 }
 
 input {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
 }
 
-.container{
+.container {
   max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
-  &--large{
+  &--large {
     max-width: 1600px;
   }
 }
 
-
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 

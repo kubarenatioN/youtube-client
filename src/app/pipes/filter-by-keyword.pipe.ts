@@ -1,21 +1,25 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { ISortOptions, SortType } from '../models/sort-options.model';
-import { IVideoItem } from '../models/video-item.model';
+import { Pipe, PipeTransform } from '@angular/core'
+import { ISortOptions, SortType } from '../models/sort-options.model'
+import { IVideoItem } from '../models/video-item.model'
 
 @Pipe({
-  name: 'filterByKeyword'
+  name: 'filterByKeyword',
 })
 export class FilterByKeywordPipe implements PipeTransform {
   transform(value: IVideoItem[], options: ISortOptions): IVideoItem[] {
     // console.log(value, options);
     if (options.sort.type !== SortType.KeyWord) return value
-    return value.filter(el => el.snippet.title
-      .toLowerCase()
-      .split(' ')
-      .some(word => options.keywords
-        .trim()
+    return value.filter(el =>
+      el.snippet.title
         .toLowerCase()
         .split(' ')
-        .some(w => word.includes(w))))
+        .some(word =>
+          options.keywords
+            .trim()
+            .toLowerCase()
+            .split(' ')
+            .some(w => word.includes(w))
+        )
+    )
   }
 }

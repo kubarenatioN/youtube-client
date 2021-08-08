@@ -1,9 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { ISortOptions, SortType, SortOrder } from '../models/sort-options.model';
-import { IVideoItem } from '../models/video-item.model';
+import { Pipe, PipeTransform } from '@angular/core'
+import { ISortOptions, SortType, SortOrder } from '../models/sort-options.model'
+import { IVideoItem } from '../models/video-item.model'
 
 @Pipe({
-  name: 'sort'
+  name: 'sort',
 })
 export class SortPipe implements PipeTransform {
   private videos: IVideoItem[] = []
@@ -13,27 +13,29 @@ export class SortPipe implements PipeTransform {
     const { type } = options.sort
     switch (type) {
       case SortType.Date:
-        this.videos = value
-          .sort((a, b) => this.sortByDate(a, b, order))
+        this.videos = value.sort((a, b) => this.sortByDate(a, b, order))
         break
       case SortType.ViewsCount:
-        this.videos = value
-          .sort((a, b) => this.sortByViews(a, b, order))
+        this.videos = value.sort((a, b) => this.sortByViews(a, b, order))
         break
       default:
         this.videos = value
-        break;
+        break
     }
     return this.videos
   }
 
   private sortByDate(a: IVideoItem, b: IVideoItem, order: SortOrder): number {
     if (order === 'asc') {
-      return new Date(b.snippet.publishedAt).getTime()
-        - new Date(a.snippet.publishedAt).getTime()
+      return (
+        new Date(b.snippet.publishedAt).getTime() -
+        new Date(a.snippet.publishedAt).getTime()
+      )
     }
-    return new Date(a.snippet.publishedAt).getTime()
-      - new Date(b.snippet.publishedAt).getTime()
+    return (
+      new Date(a.snippet.publishedAt).getTime() -
+      new Date(b.snippet.publishedAt).getTime()
+    )
   }
 
   private sortByViews(a: IVideoItem, b: IVideoItem, order: SortOrder): number {

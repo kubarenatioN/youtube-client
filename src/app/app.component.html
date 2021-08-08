@@ -1,8 +1,6 @@
 <app-header
   #header
   (changeSortVisibility)="changeSortVisibility($event)"
-  (search)="search.onSearch()"></app-header>
-<app-search
-  #search
-  [isSortActive]="header.isSortActive"></app-search>
-
+  (search)="search.onSearch()"
+></app-header>
+<app-search #search [isSortActive]="header.isSortActive"></app-search>
