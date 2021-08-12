@@ -6,11 +6,5 @@ import { Component } from '@angular/core'
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  isSortActive = false
-
   title = 'YouTube Client'
-
-  changeSortVisibility(visibility: boolean) {
-    this.isSortActive = visibility
-  }
 }

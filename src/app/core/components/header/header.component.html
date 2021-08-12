@@ -1,0 +1,34 @@
+<header>
+  <div class="container container-header">
+    <a routerLink="/search">
+      <img class="logo-img" src="../assets/images/logo.svg" alt="Logo" />
+    </a>
+
+    <div class="search-container">
+      <form (submit)="$event.preventDefault()">
+        <input type="text" />
+        <button class="btn-primary" (click)="onSearch()">Search</button>
+      </form>
+      <button *ngIf="isSearchPage" (click)="toggleSort()" class="btn-icon">
+        <img src="../assets/images/settings.svg" alt="Settings" />
+      </button>
+      <a class="btn-primary" routerLink="/login">login</a>
+      <a class="btn-primary" routerLink="/search">search</a>
+    </div>
+
+    <div class="profile-wrapper">
+    <a routerLink="/login" class="profile-link">
+      <span>{{getUsername()}}</span>
+      <img
+        class="profile-img"
+        src="../assets/images/profile.svg"
+        alt="Profile Icon"
+      />
+    </a>
+    <button
+    (click)="logoutUser()"
+    [disabled]="!checkUserLogged"
+    class="btn-primary">Logout</button>
+    </div>
+  </div>
+</header>
