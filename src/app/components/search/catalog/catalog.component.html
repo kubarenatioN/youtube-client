@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="videos__container" *ngIf="videos.length; else noVideos">
+    <app-search-item
+      *ngFor="let video of videos | filterByKeyword: sortOptions | sort: sortOptions"
+      [video]="video"
+    ></app-search-item>
+  </div>
+  <ng-template #noVideos>
+    <p>No videos...</p>
+  </ng-template>
+</div>
