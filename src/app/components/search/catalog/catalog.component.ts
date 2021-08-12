@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { ISortOptions } from 'src/app/models/sort-options.model'
 import { IVideoItem } from 'src/app/models/video-item.model'
 
@@ -10,12 +10,11 @@ import { IVideoItem } from 'src/app/models/video-item.model'
 export class CatalogComponent {
   sortOptions!: ISortOptions
 
-  initialVideos: IVideoItem[] = []
+  @Input() initialVideos: IVideoItem[] = []
 
-  videos: IVideoItem[] = []
+  @Input() videos: IVideoItem[] = []
 
   sortItems(options: ISortOptions) {
-    // console.log('sort items catalog', options)
     this.sortOptions = options
     this.videos = [...this.initialVideos]
   }

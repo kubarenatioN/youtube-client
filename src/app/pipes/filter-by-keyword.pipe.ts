@@ -7,19 +7,24 @@ import { IVideoItem } from '../models/video-item.model'
 })
 export class FilterByKeywordPipe implements PipeTransform {
   transform(value: IVideoItem[], options: ISortOptions): IVideoItem[] {
-    // console.log(value, options);
     if (options.sort.type !== SortType.KeyWord) return value
-    return value.filter(el =>
-      el.snippet.title
-        .toLowerCase()
-        .split(' ')
-        .some(word =>
-          options.keywords
-            .trim()
-            .toLowerCase()
-            .split(' ')
-            .some(w => word.includes(w))
-        )
+    const pattern = this.toPattern(options.keywords)
+    return value.filter(v => {
+      return pattern.test(v.snippet.title)
+    })
+  }
+
+  handleEscape = (str: string) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
+  toPattern(search: string) {
+    const matches = search.match(/\S+/g)
+    if (matches === null) return new RegExp('')
+    return new RegExp(
+      `^${matches
+        .map(this.handleEscape)
+        .map(word => `(?=.*${word})`)
+        .join('')}`,
+      'i'
     )
   }
 }

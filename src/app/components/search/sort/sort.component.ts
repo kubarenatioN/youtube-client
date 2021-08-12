@@ -1,7 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
-import { ISortOptions, SortOrder, SortType } from 'src/app/models/sort-options.model'
+import {
+  ISortOptions,
+  SortOrder,
+  SortType,
+} from 'src/app/models/sort-options.model'
 
-interface ISortButtonsStyles {
+interface ISortButtonsClasses {
   activeDate: boolean
   activeViewsCount: boolean
   activeByKeywords: boolean
@@ -18,7 +22,7 @@ export class SortComponent implements OnInit {
 
   @Output() sortVideos = new EventEmitter<ISortOptions>()
 
-  sortOptions: ISortOptions = {
+  private sortOptions: ISortOptions = {
     sort: {
       type: SortType.None,
       order: 'desc',
@@ -26,42 +30,40 @@ export class SortComponent implements OnInit {
     keywords: '',
   }
 
-  classes!: ISortButtonsStyles
-
   ngOnInit(): void {
-    this.updateClasses()
     this.sortVideos.emit(this.sortOptions)
   }
 
-  setSortType(sortType: SortType) {
-    const { type } = this.sortOptions.sort
-    const { order } = this.sortOptions.sort
+  onSort(type: SortType) {
+    this.setSortType(type)
+    this.sort()
+  }
+
+  onFilter() {
+    this.sortOptions.sort.type = SortType.KeyWord
+  }
+
+  onFilterKeywordsChange(e: Event) {
+    this.sortOptions.keywords = (e.target as HTMLInputElement).value
+    this.sort()
+  }
+
+  private setSortType(sortType: SortType) {
+    const { type, order } = this.sortOptions.sort
     if (type === sortType) {
       this.sortOptions.sort.order = order === 'desc' ? 'asc' : 'desc'
     } else {
       this.sortOptions.sort.type = sortType
       this.sortOptions.sort.order = 'desc'
     }
-    this.updateClasses()
-    this.onSort()
   }
 
-  setFilterByWord() {
-    this.sortOptions.sort.type = SortType.KeyWord
-    this.updateClasses()
-  }
-
-  filterByWord(e: Event) {
-    this.sortOptions.keywords = (e.target as HTMLInputElement).value
-    this.onSort()
-  }
-
-  private onSort() {
+  private sort() {
     this.sortVideos.emit(this.sortOptions)
   }
 
-  private updateClasses(): void {
-    this.classes = {
+  get classes(): ISortButtonsClasses {
+    return {
       activeDate: this.sortOptions.sort.type === SortType.Date,
       activeViewsCount: this.sortOptions.sort.type === SortType.ViewsCount,
       activeByKeywords: this.sortOptions.sort.type === SortType.KeyWord,
