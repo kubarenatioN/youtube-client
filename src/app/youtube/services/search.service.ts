@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { BehaviorSubject, Subject } from 'rxjs'
+import { Subject } from 'rxjs'
 import { IVideosResponse } from '../models/videos-response.model'
-import { ISortOptions } from '../models/sort-options.model'
 import { IVideoItem } from '../models/video-item.model'
-import { SortbarManagerService } from './sortbar-manager.service'
 
 @Injectable({
   providedIn: 'root',
@@ -20,12 +18,7 @@ export class SearchService {
 
   videoDetails$ = new Subject<IVideoItem | undefined>()
 
-  sortOptions$ = new BehaviorSubject<ISortOptions>(this.getSortOptions())
-
-  constructor(
-    private http: HttpClient,
-    private sortService: SortbarManagerService
-  ) {
+  constructor(private http: HttpClient) {
     this.getVideos()
   }
 
@@ -43,13 +36,5 @@ export class SearchService {
       const video = response.items.find(v => v.id === id)
       this.videoDetails$.next(video)
     })
-  }
-
-  private getSortOptions() {
-    return this.sortService.getSortOptions()
-  }
-
-  emitSort() {
-    this.sortOptions$.next(this.getSortOptions())
   }
 }

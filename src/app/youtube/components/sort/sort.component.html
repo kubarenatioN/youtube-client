@@ -16,7 +16,7 @@
         Key word
       </button>
       <input class="keyword-filter" type="text" #keywordsInput [disabled]="!classes.activeByKeywords"
-        (input)="filterByWord($event)" [value]="classes.activeByKeywords ? keywordsInput.value : ''" />
+        (input)="onFilterInput($event)" [value]="classes.activeByKeywords ? keywordsInput.value : ''" />
     </div>
   </div>
 </div>

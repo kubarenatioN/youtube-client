@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core'
-import { BehaviorSubject } from 'rxjs'
+import { BehaviorSubject, Observable } from 'rxjs'
 import { ISortOptions, SortOrder, SortType } from '../models/sort-options.model'
 
-export interface ISortButtonsStyles {
+export interface ISortButtonsClasses {
   activeDate: boolean
   activeViewsCount: boolean
   activeByKeywords: boolean
@@ -17,7 +17,7 @@ export class SortbarManagerService {
 
   sortVisibility$ = new BehaviorSubject<boolean>(this.isSortVisible)
 
-  classes!: ISortButtonsStyles
+  options$ = new Observable<ISortOptions>()
 
   private sortOptions: ISortOptions = {
     sort: {
@@ -27,23 +27,26 @@ export class SortbarManagerService {
     keywords: '',
   }
 
+  private options$$ = new BehaviorSubject(this.sortOptions)
+
   constructor() {
-    this.classes = this.updateClasses()
+    this.options$ = this.options$$.asObservable()
   }
 
   setSortOptions(sortType: SortType): void {
-    const { type } = this.sortOptions.sort
-    const { order } = this.sortOptions.sort
+    const { type, order } = this.sortOptions.sort
     if (type === sortType) {
       this.sortOptions.sort.order = order === 'desc' ? 'asc' : 'desc'
     } else {
       this.sortOptions.sort.type = sortType
       this.sortOptions.sort.order = 'desc'
     }
+    this.emitNewOptions()
   }
 
   setKeywords(keywords: string) {
     this.sortOptions.keywords = keywords
+    this.emitNewOptions()
   }
 
   onToggle(isVisible: boolean): void {
@@ -51,17 +54,20 @@ export class SortbarManagerService {
     this.sortVisibility$.next(this.isSortVisible)
   }
 
-  updateClasses(): ISortButtonsStyles {
-    this.classes = {
+  get classes(): ISortButtonsClasses {
+    return {
       activeDate: this.sortOptions.sort.type === SortType.Date,
       activeViewsCount: this.sortOptions.sort.type === SortType.ViewsCount,
       activeByKeywords: this.sortOptions.sort.type === SortType.KeyWord,
       order: this.sortOptions.sort.order,
     }
-    return this.classes
   }
 
-  getSortOptions(): ISortOptions {
+  get options(): ISortOptions {
     return this.sortOptions
+  }
+
+  emitNewOptions() {
+    this.options$$.next(this.sortOptions)
   }
 }

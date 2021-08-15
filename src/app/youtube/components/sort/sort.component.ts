@@ -1,8 +1,8 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core'
-import { ISortOptions, SortType } from '../../models/sort-options.model'
-import { SearchService } from '../../services/search.service'
+import { Component, OnDestroy, OnInit } from '@angular/core'
+import { Subscription } from 'rxjs'
+import { SortType } from '../../models/sort-options.model'
 import {
-  ISortButtonsStyles,
+  ISortButtonsClasses,
   SortbarManagerService,
 } from '../../services/sortbar-manager.service'
 
@@ -11,49 +11,39 @@ import {
   templateUrl: './sort.component.html',
   styleUrls: ['./sort.component.scss'],
 })
-export class SortComponent implements OnInit {
+export class SortComponent implements OnInit, OnDestroy {
   isVisible!: boolean
 
-  classes!: ISortButtonsStyles
+  get classes(): ISortButtonsClasses {
+    return this.sortService.classes
+  }
 
-  // @Output() sort = new EventEmitter<ISortOptions>()
+  private sortVisibilitySubscr!: Subscription
 
-  constructor(
-    private sortService: SortbarManagerService,
-    private searchService: SearchService
-  ) {}
+  constructor(private sortService: SortbarManagerService) {}
 
   ngOnInit(): void {
-    this.updateClasses()
-    this.sortService.sortVisibility$.subscribe(isVisible => {
-      this.isVisible = isVisible
-    })
+    this.sortVisibilitySubscr = this.sortService.sortVisibility$.subscribe(
+      isVisible => {
+        this.isVisible = isVisible
+      }
+    )
   }
 
   setSortType(sortType: SortType) {
     this.sortService.setSortOptions(sortType)
-    this.updateClasses()
-    this.onSort()
   }
 
   setFilterByWord() {
-    // this.sortOptions.sort.type = SortType.KeyWord
     this.sortService.setSortOptions(SortType.KeyWord)
-    this.updateClasses()
   }
 
-  filterByWord(e: Event) {
+  onFilterInput(e: Event) {
     const keywords = (e.target as HTMLInputElement).value
     this.sortService.setKeywords(keywords)
-    this.onSort()
   }
 
-  private onSort() {
-    this.searchService.emitSort()
-    // this.sort.emit(this.sortService.getSortOptions())
-  }
-
-  private updateClasses(): void {
-    this.classes = this.sortService.updateClasses()
+  ngOnDestroy() {
+    this.sortVisibilitySubscr.unsubscribe()
   }
 }
