@@ -18,7 +18,7 @@
 
     <div class="profile-wrapper">
     <a routerLink="/login" class="profile-link">
-      <span>{{getUsername()}}</span>
+      <span>{{username}}</span>
       <img
         class="profile-img"
         src="../assets/images/profile.svg"
@@ -27,7 +27,7 @@
     </a>
     <button
     (click)="logoutUser()"
-    [disabled]="!checkUserLogged"
+    [disabled]="!isUserLogged"
     class="btn-primary">Logout</button>
     </div>
   </div>

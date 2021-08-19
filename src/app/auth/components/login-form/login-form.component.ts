@@ -1,6 +1,7 @@
-import { Component } from '@angular/core'
+import { Component, OnDestroy, OnInit } from '@angular/core'
 import { NgForm } from '@angular/forms'
 import { Router } from '@angular/router'
+import { Subscription } from 'rxjs'
 import { IUser } from '../../models/user.model'
 import { LoginService } from '../../services/login.service'
 
@@ -9,19 +10,31 @@ import { LoginService } from '../../services/login.service'
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss'],
 })
-export class LoginFormComponent {
+export class LoginFormComponent implements OnInit, OnDestroy {
+  userSubscription!: Subscription
+
   constructor(private loginService: LoginService, private router: Router) {}
 
-  onSubmit(f: NgForm) {
-    if (f.valid) {
+  ngOnInit(): void {
+    this.userSubscription = this.loginService.user$.subscribe(user => {
+      if (user !== null) {
+        this.router.navigate(['search'])
+      }
+    })
+  }
+
+  onSubmit(form: NgForm): void {
+    if (form.valid) {
       const user: IUser = {
-        ...f.value,
+        ...form.value,
         token: Date.now(),
       }
-      this.loginService.setUser(user).subscribe(() => {
-        this.router.navigate(['search'])
-        f.resetForm()
-      })
+      this.loginService.setUser(user)
+      form.resetForm()
     }
+  }
+
+  ngOnDestroy(): void {
+    this.userSubscription.unsubscribe()
   }
 }

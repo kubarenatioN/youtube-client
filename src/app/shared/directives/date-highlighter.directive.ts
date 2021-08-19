@@ -22,7 +22,7 @@ export class DateHighlighterDirective implements OnInit {
     this.renderer2.addClass(this.el.nativeElement, this.colorClass)
   }
 
-  private defineColor() {
+  private defineColor(): void {
     const date = new Date(this.appDateHighlighter).getTime() || Date.now()
     if (date > this.getTimeFromDaysPassed(7)) {
       this.colorClass = DateColors.Blue
@@ -37,7 +37,7 @@ export class DateHighlighterDirective implements OnInit {
     return new Date(Date.now() - days * 24 * 60 * 60 * 1000).getTime()
   }
 
-  private getTimeFromMonthsPassed(monthsPassed: number) {
+  private getTimeFromMonthsPassed(monthsPassed: number): number {
     const d = new Date()
     const m = d.getMonth()
     d.setMonth(d.getMonth() - monthsPassed)

@@ -16,12 +16,14 @@ export class FilterByKeywordPipe implements PipeTransform {
     return value.filter(v => pattern.test(v.snippet.title))
   }
 
-  private handleEscape = (str: string) =>
+  private handleEscape = (str: string): string =>
     str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
-  private getPattern(query: string) {
+  private getPattern(query: string): RegExp {
     const matches = query.match(/\S+/g)
-    if (matches === null) return new RegExp('')
+    if (matches === null) {
+      return new RegExp('')
+    }
     return new RegExp(
       `^${matches
         .map(this.handleEscape)

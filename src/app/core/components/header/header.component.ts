@@ -1,21 +1,20 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnDestroy, OnInit } from '@angular/core'
 import { Event, NavigationEnd, Router, RouterEvent } from '@angular/router'
 import { LoginService } from 'src/app/auth/services/login.service'
 import { SearchService } from 'src/app/youtube/services/search.service'
 import { SortbarManagerService } from 'src/app/youtube/services/sortbar-manager.service'
 import { filter } from 'rxjs/operators'
+import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
-  // @Output() changeSortVisibility = new EventEmitter<boolean>()
+export class HeaderComponent implements OnInit, OnDestroy {
+  isSearchPage = false
 
-  // @Output() search = new EventEmitter()
-
-  isSearchPage!: boolean
+  userSubscription!: Subscription
 
   constructor(
     private sortService: SortbarManagerService,
@@ -26,36 +25,40 @@ export class HeaderComponent implements OnInit {
     router.events
       .pipe(filter((e: Event): e is RouterEvent => e instanceof NavigationEnd))
       .subscribe((e: RouterEvent) => {
-        // console.log('router event', e.url)
         this.isSearchPage = e.url === '/search'
       })
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.isSearchPage = this.router.url === '/search'
-  }
-
-  toggleSort() {
-    this.sortService.onToggle(!this.sortService.isSortVisible)
-    // this.sortService.isSortVisible = this.isSortActive
-    // this.changeSortVisibility.emit(this.isSortActive)
-  }
-
-  onSearch() {
-    this.searchService.getVideos()
-  }
-
-  getUsername() {
-    return this.loginService.currentUser?.login || 'Your name'
-  }
-
-  logoutUser() {
-    this.loginService.removeUser().subscribe(() => {
-      this.router.navigate(['login'])
+    this.userSubscription = this.loginService.user$.subscribe(user => {
+      if (user === null) {
+        this.router.navigate(['login'])
+      }
     })
   }
 
-  get checkUserLogged() {
+  ngOnDestroy(): void {
+    this.userSubscription.unsubscribe()
+  }
+
+  toggleSort(): void {
+    this.sortService.toggle()
+  }
+
+  onSearch(): void {
+    this.searchService.getVideos()
+  }
+
+  get username(): string {
+    return this.loginService.username || 'Your name'
+  }
+
+  logoutUser(): void {
+    this.loginService.removeUser()
+  }
+
+  get isUserLogged(): boolean {
     return this.loginService.isUserLogged
   }
 }

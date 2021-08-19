@@ -31,13 +31,11 @@ export class SortPipe implements PipeTransform {
     const res =
       new Date(a.snippet.publishedAt).getTime() -
       new Date(b.snippet.publishedAt).getTime()
-    if (order === 'asc') return -res
-    return res
+    return order === 'asc' ? -res : res
   }
 
   private sortByViews(a: IVideoItem, b: IVideoItem, order: SortOrder): number {
     const res = Number(b.statistics.viewCount) - Number(a.statistics.viewCount)
-    if (order === 'asc') return -res
-    return res
+    return order === 'asc' ? -res : res
   }
 }

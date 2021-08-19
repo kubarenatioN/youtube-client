@@ -18,32 +18,31 @@ export class SortComponent implements OnInit, OnDestroy {
     return this.sortService.classes
   }
 
-  private sortVisibilitySubscr!: Subscription
+  private sortVisibilitySubscription!: Subscription
 
   constructor(private sortService: SortbarManagerService) {}
 
   ngOnInit(): void {
-    this.sortVisibilitySubscr = this.sortService.sortVisibility$.subscribe(
-      isVisible => {
+    this.sortVisibilitySubscription =
+      this.sortService.sortVisibility$.subscribe(isVisible => {
         this.isVisible = isVisible
-      }
-    )
+      })
   }
 
-  setSortType(sortType: SortType) {
+  setSortType(sortType: SortType): void {
     this.sortService.setSortOptions(sortType)
   }
 
-  setFilterByWord() {
+  setFilterByWord(): void {
     this.sortService.setSortOptions(SortType.KeyWord)
   }
 
-  onFilterInput(e: Event) {
+  onFilterInput(e: Event): void {
     const keywords = (e.target as HTMLInputElement).value
     this.sortService.setKeywords(keywords)
   }
 
-  ngOnDestroy() {
-    this.sortVisibilitySubscr.unsubscribe()
+  ngOnDestroy(): void {
+    this.sortVisibilitySubscription.unsubscribe()
   }
 }

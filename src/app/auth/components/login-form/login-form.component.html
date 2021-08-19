@@ -1,6 +1,6 @@
 <div class="form-wrapper">
   <h2 class="title">Login</h2>
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
     <label for="login">
       <span>login</span>
       <input
@@ -19,6 +19,6 @@
         name="password"
         ngModel>
     </label>
-    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Login</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Login</button>
   </form>
 </div>

@@ -1,51 +1,49 @@
 import { Injectable } from '@angular/core'
-import { Observable } from 'rxjs'
+import { Observable, Subject } from 'rxjs'
+import { delay } from 'rxjs/operators'
 import { IUser } from '../models/user.model'
 
-const LOCAL_STORAGE_TOKEN = 'user'
+const LOCAL_STORAGE_USER = 'user'
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-  currentUser?: IUser
+  private currentUser = this.getUser()
+
+  user$!: Observable<IUser | null>
+
+  private user$$ = new Subject<IUser | null>()
 
   constructor() {
-    this.currentUser = this.getUser()
+    this.user$ = this.user$$.pipe(delay(1000))
   }
 
-  getUser() {
-    const userString = localStorage.getItem(LOCAL_STORAGE_TOKEN)
+  private getUser(): IUser | null {
+    const userString = localStorage.getItem(LOCAL_STORAGE_USER)
     if (userString !== null) {
-      return JSON.parse(userString)
+      return JSON.parse(userString) as IUser
     }
-    return undefined
+    return null
   }
 
-  setUser(newUser: IUser): Observable<void> {
-    return new Observable(observer => {
-      setTimeout(() => {
-        this.currentUser = newUser
-        localStorage.setItem(
-          LOCAL_STORAGE_TOKEN,
-          JSON.stringify(this.currentUser)
-        )
-        observer.next()
-      }, 1000)
-    })
+  setUser(newUser: IUser): void {
+    this.currentUser = newUser
+    localStorage.setItem(LOCAL_STORAGE_USER, JSON.stringify(this.currentUser))
+    this.user$$.next(this.currentUser)
   }
 
-  removeUser() {
-    return new Observable(observer => {
-      setTimeout(() => {
-        localStorage.removeItem(LOCAL_STORAGE_TOKEN)
-        this.currentUser = undefined
-        observer.next()
-      }, 1000)
-    })
+  removeUser(): void {
+    localStorage.removeItem(LOCAL_STORAGE_USER)
+    this.currentUser = null
+    this.user$$.next(null)
   }
 
   get isUserLogged(): boolean {
     return !!this.currentUser
+  }
+
+  get username(): string | undefined {
+    return this.currentUser?.login
   }
 }
