@@ -4,7 +4,7 @@ import { CanLoadUnauthGuard } from './core/guards/can-load-unauth.guard'
 import { ErrorPageComponent } from './core/pages/error-page/error-page.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'search', pathMatch: 'full' },
   {
     path: 'search',
     loadChildren: () =>

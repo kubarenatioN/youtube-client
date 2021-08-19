@@ -1,0 +1,5 @@
+{
+  "baseUrl": "./assets/response.json",
+  "youtubeApiBase": "https://www.googleapis.com/youtube/v3/",
+  "apiKey": "AIzaSyA9D9rmDH2oX1ATrqhj_yYJ7sNd_niJ1dg"
+}

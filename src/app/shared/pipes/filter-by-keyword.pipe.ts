@@ -13,6 +13,7 @@ export class FilterByKeywordPipe implements PipeTransform {
     const { options } = this.sortService
     if (options.sort.type !== SortType.KeyWord) return value
     const pattern = this.getPattern(options.keywords)
+    if (options.keywords === '') return value
     return value.filter(v => pattern.test(v.snippet.title))
   }
 

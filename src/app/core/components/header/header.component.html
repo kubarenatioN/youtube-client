@@ -6,19 +6,18 @@
 
     <div class="search-container">
       <form (submit)="$event.preventDefault()">
-        <input type="text" />
-        <button class="btn-primary" (click)="onSearch()">Search</button>
+        <input (input)="onSearch()" [(ngModel)]="query" [ngModelOptions]="{standalone: true}"/>
       </form>
       <button *ngIf="isSearchPage" (click)="toggleSort()" class="btn-icon">
         <img src="../assets/images/settings.svg" alt="Settings" />
       </button>
-      <a class="btn-primary" routerLink="/login">login</a>
-      <a class="btn-primary" routerLink="/search">search</a>
+      <!-- <a class="btn-primary" routerLink="/login">login</a>
+      <a class="btn-primary" routerLink="/search">search</a> -->
     </div>
 
     <div class="profile-wrapper">
     <a routerLink="/login" class="profile-link">
-      <span>{{getUsername()}}</span>
+      <span>{{username}}</span>
       <img
         class="profile-img"
         src="../assets/images/profile.svg"
@@ -26,9 +25,13 @@
       />
     </a>
     <button
+    *ngIf="isUserLogged"
     (click)="logoutUser()"
-    [disabled]="!checkUserLogged"
-    class="btn-primary">Logout</button>
+    class="btn-primary btn-auth">Logout</button>
+    <button
+    *ngIf="!isUserLogged"
+    (click)="navigateToLoginPage()"
+    class="btn-primary btn-auth">Login</button>
     </div>
   </div>
 </header>

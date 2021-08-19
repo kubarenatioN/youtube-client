@@ -44,6 +44,12 @@ export class SortbarManagerService {
     this.emitNewOptions()
   }
 
+  setFilterOptions(type: SortType): void {
+    this.sortOptions.sort.type = type
+    this.sortOptions.keywords = ''
+    this.emitNewOptions()
+  }
+
   setKeywords(keywords: string) {
     this.sortOptions.keywords = keywords
     this.emitNewOptions()

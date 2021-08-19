@@ -3,7 +3,7 @@ import { IVideoStats } from './video-stats.model'
 export interface IVideoItem {
   kind: string
   etag: string
-  id: string
+  id: IVideoItemId
   snippet: IVideoSnippet
   statistics: IVideoStats
 }
@@ -15,19 +15,11 @@ interface IVideoSnippet {
   description: string
   thumbnails: IVideoThumbnailSet
   channelTitle: string
-  tags: string[]
-  categoryId: string
   liveBroadcastContent: LiveBroadcast
-  localized: ILocalized
-  defaultAudioLanguage: string
+  publishTime: string
 }
 
 type LiveBroadcast = 'none' | 'yes'
-
-interface ILocalized {
-  title: string
-  description: string
-}
 
 interface IVideoThumbnailSet {
   default: IVideoThumbnail
@@ -41,4 +33,9 @@ interface IVideoThumbnail {
   url: string
   width: string
   height: string
+}
+
+interface IVideoItemId {
+  kind: string
+  videoId: string
 }

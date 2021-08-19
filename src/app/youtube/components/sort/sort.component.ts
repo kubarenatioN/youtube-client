@@ -35,7 +35,7 @@ export class SortComponent implements OnInit, OnDestroy {
   }
 
   setFilterByWord() {
-    this.sortService.setSortOptions(SortType.KeyWord)
+    this.sortService.setFilterOptions(SortType.KeyWord)
   }
 
   onFilterInput(e: Event) {

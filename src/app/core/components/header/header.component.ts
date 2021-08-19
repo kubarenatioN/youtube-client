@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { Event, NavigationEnd, Router, RouterEvent } from '@angular/router'
+import { filter } from 'rxjs/operators'
 import { LoginService } from 'src/app/auth/services/login.service'
 import { SearchService } from 'src/app/youtube/services/search.service'
 import { SortbarManagerService } from 'src/app/youtube/services/sortbar-manager.service'
-import { filter } from 'rxjs/operators'
 
 @Component({
   selector: 'app-header',
@@ -11,11 +11,11 @@ import { filter } from 'rxjs/operators'
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  // @Output() changeSortVisibility = new EventEmitter<boolean>()
-
-  // @Output() search = new EventEmitter()
-
   isSearchPage!: boolean
+
+  query = ''
+
+  isUserLogged!: boolean
 
   constructor(
     private sortService: SortbarManagerService,
@@ -33,29 +33,30 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.isSearchPage = this.router.url === '/search'
+    this.loginService.isUserLogged$.subscribe(isLogged => {
+      this.isUserLogged = isLogged
+    })
   }
 
   toggleSort() {
     this.sortService.onToggle(!this.sortService.isSortVisible)
-    // this.sortService.isSortVisible = this.isSortActive
-    // this.changeSortVisibility.emit(this.isSortActive)
   }
 
   onSearch() {
-    this.searchService.getVideos()
+    if (this.query.length > 2 && this.isSearchPage) {
+      this.searchService.getVideos(this.query)
+    }
   }
 
-  getUsername() {
+  get username() {
     return this.loginService.currentUser?.login || 'Your name'
   }
 
   logoutUser() {
-    this.loginService.removeUser().subscribe(() => {
-      this.router.navigate(['login'])
-    })
+    this.loginService.removeUser()
   }
 
-  get checkUserLogged() {
-    return this.loginService.isUserLogged
+  navigateToLoginPage() {
+    this.router.navigate(['login'])
   }
 }

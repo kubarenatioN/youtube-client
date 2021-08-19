@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { Subscription } from 'rxjs'
+import { debounceTime } from 'rxjs/operators'
 import { IVideoItem } from '../../models/video-item.model'
 import { SearchService } from '../../services/search.service'
 import { SortbarManagerService } from '../../services/sortbar-manager.service'
@@ -10,8 +11,6 @@ import { SortbarManagerService } from '../../services/sortbar-manager.service'
   styleUrls: ['./catalog.component.scss'],
 })
 export class CatalogComponent implements OnInit, OnDestroy {
-  initialVideos: IVideoItem[] = []
-
   videos: IVideoItem[] = []
 
   videosSubscription!: Subscription
@@ -24,14 +23,15 @@ export class CatalogComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.videosSubscription = this.searchService.videos$.subscribe(data => {
-      this.videos = data
-      this.initialVideos = data
-    })
+    this.videosSubscription = this.searchService.videos$
+      // .pipe(debounceTime(1000))
+      .subscribe(data => {
+        // console.log('data received')
+        this.videos = data
+      })
     this.sortOptionsSubscription = this.sortService.options$.subscribe(() => {
       this.videos = [...this.videos]
     })
-    this.searchService.getVideos()
   }
 
   ngOnDestroy() {

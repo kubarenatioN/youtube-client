@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core'
-import { Observable } from 'rxjs'
+import { Router } from '@angular/router'
+import { BehaviorSubject, Observable } from 'rxjs'
 import { IUser } from '../models/user.model'
 
 const LOCAL_STORAGE_TOKEN = 'user'
@@ -10,8 +11,17 @@ const LOCAL_STORAGE_TOKEN = 'user'
 export class LoginService {
   currentUser?: IUser
 
-  constructor() {
+  isUserLogged$ = new Observable<boolean>()
+
+  private isUserLogged$$ = new BehaviorSubject<boolean>(this.isUserLogged)
+
+  get isUserLogged(): boolean {
+    return !!this.currentUser
+  }
+
+  constructor(private router: Router) {
     this.currentUser = this.getUser()
+    this.isUserLogged$ = this.isUserLogged$$.asObservable()
   }
 
   getUser() {
@@ -22,30 +32,24 @@ export class LoginService {
     return undefined
   }
 
-  setUser(newUser: IUser): Observable<void> {
-    return new Observable(observer => {
-      setTimeout(() => {
-        this.currentUser = newUser
-        localStorage.setItem(
-          LOCAL_STORAGE_TOKEN,
-          JSON.stringify(this.currentUser)
-        )
-        observer.next()
-      }, 1000)
-    })
+  setUser(newUser: IUser) {
+    setTimeout(() => {
+      this.currentUser = newUser
+      localStorage.setItem(
+        LOCAL_STORAGE_TOKEN,
+        JSON.stringify(this.currentUser)
+      )
+      this.isUserLogged$$.next(true)
+      this.router.navigate(['search'])
+    }, 1000)
   }
 
   removeUser() {
-    return new Observable(observer => {
-      setTimeout(() => {
-        localStorage.removeItem(LOCAL_STORAGE_TOKEN)
-        this.currentUser = undefined
-        observer.next()
-      }, 1000)
-    })
-  }
-
-  get isUserLogged(): boolean {
-    return !!this.currentUser
+    setTimeout(() => {
+      localStorage.removeItem(LOCAL_STORAGE_TOKEN)
+      this.currentUser = undefined
+      this.isUserLogged$$.next(false)
+      this.router.navigate(['login'])
+    }, 1000)
   }
 }

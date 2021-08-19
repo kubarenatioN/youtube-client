@@ -1,39 +1,54 @@
 import { Injectable } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
-import { Subject } from 'rxjs'
-import { IVideosResponse } from '../models/videos-response.model'
+import { Observable, Subject } from 'rxjs'
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators'
 import { IVideoItem } from '../models/video-item.model'
+import { YoutubeHttpService } from './youtube-http.service'
 
 @Injectable({
   providedIn: 'root',
 })
 export class SearchService {
-  private url = './assets/response.json'
-
-  response?: IVideosResponse
-
-  videos: IVideoItem[] = []
-
-  videos$ = new Subject<IVideoItem[]>()
+  private videoItems: IVideoItem[] = []
 
   videoDetails$ = new Subject<IVideoItem | undefined>()
 
-  constructor(private http: HttpClient) {
-    this.getVideos()
+  videos$ = new Observable<IVideoItem[]>()
+
+  private videos$$ = new Subject<IVideoItem[]>()
+
+  private videosQuery$$ = new Subject<string>()
+
+  constructor(private httpService: YoutubeHttpService) {
+    this.videos$ = this.videos$$.asObservable()
+    this.videosQuery$$
+      .pipe(
+        debounceTime(2000),
+        distinctUntilChanged(),
+        switchMap(query => {
+          return this.httpService.getVideos(query)
+        }),
+        switchMap(res => {
+          this.videoItems = res.items
+          const ids = this.videoItems.map(v => v.id.videoId).join(',')
+          return this.httpService.getStatistics(ids)
+        })
+      )
+      .subscribe(statsResp => {
+        const stats = statsResp.items
+        stats.forEach((stat, i) => {
+          this.videoItems[i].statistics = stat.statistics
+        })
+        this.videos$$.next(this.videoItems)
+      })
   }
 
-  getVideos() {
-    this.http.get<IVideosResponse>(this.url).subscribe(response => {
-      this.response = response
-      this.videos = response.items
-      this.videos$.next(this.videos)
-    })
+  getVideos(query: string) {
+    this.videosQuery$$.next(query)
   }
 
   getById(id: string) {
-    this.http.get<IVideosResponse>(this.url).subscribe(response => {
-      this.response = response
-      const video = response.items.find(v => v.id === id)
+    this.httpService.getById(id).subscribe(response => {
+      const video = response.items.find(v => v.id.videoId === id)
       this.videoDetails$.next(video)
     })
   }

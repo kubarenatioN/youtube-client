@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { NgForm } from '@angular/forms'
 import { Router } from '@angular/router'
 import { IUser } from '../../models/user.model'
@@ -9,8 +9,10 @@ import { LoginService } from '../../services/login.service'
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss'],
 })
-export class LoginFormComponent {
+export class LoginFormComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router) {}
+
+  ngOnInit() {}
 
   onSubmit(f: NgForm) {
     if (f.valid) {
@@ -18,10 +20,8 @@ export class LoginFormComponent {
         ...f.value,
         token: Date.now(),
       }
-      this.loginService.setUser(user).subscribe(() => {
-        this.router.navigate(['search'])
-        f.resetForm()
-      })
+      this.loginService.setUser(user)
+      f.resetForm()
     }
   }
 }
