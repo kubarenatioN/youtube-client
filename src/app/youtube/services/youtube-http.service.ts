@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import {
-  switchMap
-} from 'rxjs/operators'
+import { Observable } from 'rxjs'
+import { switchMap } from 'rxjs/operators'
 import { HttpConfigService } from 'src/app/shared/services/http-config.service'
-import { IVideoStatsResponse } from '../models/video-stats.model'
-import { IVideosResponse } from '../models/videos-response.model'
+import {
+  IVideosResponse,
+  IVideosStatsResponse
+} from '../models/videos-response.model'
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class YoutubeHttpService {
   private url = './assets/response.json'
@@ -18,32 +19,48 @@ export class YoutubeHttpService {
     private configService: HttpConfigService
   ) {}
 
-  getVideos(query: string) {
+  getVideos(query: string): Observable<IVideosResponse> {
     return this.configService.getConfig().pipe(
-      switchMap(config => {
-        return this.http.get<IVideosResponse>('./assets/response.json')
-
-        // return this.http.get<IVideosResponse>(
-        //   `${config.youtubeApiBase}search?type=video&part=snippet&maxResults=12&key=${config.apiKey}&q=${query}`
-        // )
+      switchMap(() => {
+        // return this.http.get<IVideosResponse>('./assets/response.json')
+        return this.http.get<IVideosResponse>(`search`, {
+          params: {
+            maxResults: 3,
+            type: 'video',
+            part: 'snippet',
+            q: query
+          }
+        })
       })
     )
   }
 
-  getStatistics(ids: string) {
+  getStatistics(ids: string): Observable<IVideosStatsResponse> {
     return this.configService.getConfig().pipe(
-      switchMap(config => {
-        return this.http.get<IVideoStatsResponse>(
-          './assets/stats-response.json'
-        )
-        // return this.http.get<IVideoStatsResponse>(
-        //   `${config.youtubeApiBase}videos?part=statistics,snippet&key=${config.apiKey}&id=${ids}`
+      switchMap(() => {
+        // return this.http.get<IVideosStatsResponse>(
+        //   './assets/stats-response.json'
         // )
+        return this.http.get<IVideosStatsResponse>(`videos`, {
+          params: {
+            part: 'statistics,snippet',
+            id: ids
+          }
+        })
       })
     )
   }
 
-  getById(id: string) {
-    return this.http.get<IVideosResponse>(this.url)
+  getById(id: string): Observable<IVideosStatsResponse> {
+    return this.configService.getConfig().pipe(
+      switchMap(() => {
+        return this.http.get<IVideosStatsResponse>(`videos`, {
+          params: {
+            part: 'statistics,snippet',
+            id
+          }
+        })
+      })
+    )
   }
 }

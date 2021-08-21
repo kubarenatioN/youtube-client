@@ -1,6 +1,10 @@
 <div [appDateHighlighter]="video.snippet.publishedAt" class="video-card">
-  <img class="poster" [src]="video.snippet.thumbnails.medium.url" alt="Video Poster" />
+  <img
+    class="poster"
+    [src]="video.snippet.thumbnails.medium.url"
+    alt="Video Poster"
+  />
   <app-stats *ngIf="video.statistics" [stats]="video.statistics"></app-stats>
   <h4 class="title">{{ video.snippet.title }}</h4>
-  <a class="more-link btn-link" [routerLink]="video.id.videoId">More</a>
+  <a class="more-link btn-link" [routerLink]="video.id">More</a>
 </div>

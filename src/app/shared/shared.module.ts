@@ -12,7 +12,7 @@ import { SortPipe } from './pipes/sort.pipe'
     CommonModule,
     DateHighlighterDirective,
     FilterByKeywordPipe,
-    SortPipe,
-  ],
+    SortPipe
+  ]
 })
 export class SharedModule {}

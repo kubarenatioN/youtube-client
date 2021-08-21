@@ -9,21 +9,21 @@ const routes: Routes = [
     path: 'search',
     loadChildren: () =>
       import('./youtube/youtube.module').then(m => m.YoutubeModule),
-    canLoad: [CanLoadUnauthGuard],
+    canLoad: [CanLoadUnauthGuard]
   },
   {
     path: 'login',
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
-  { path: '**', component: ErrorPageComponent },
+  { path: '**', component: ErrorPageComponent }
 ]
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      preloadingStrategy: PreloadAllModules,
-    }),
+      preloadingStrategy: PreloadAllModules
+    })
   ],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

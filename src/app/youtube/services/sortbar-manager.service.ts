@@ -10,26 +10,29 @@ export interface ISortButtonsClasses {
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class SortbarManagerService {
   isSortVisible = false
 
-  sortVisibility$ = new BehaviorSubject<boolean>(this.isSortVisible)
+  sortVisibility$!: Observable<boolean>
 
-  options$ = new Observable<ISortOptions>()
+  private sortVisibility$$ = new BehaviorSubject<boolean>(this.isSortVisible)
 
   private sortOptions: ISortOptions = {
     sort: {
       type: SortType.None,
-      order: 'desc',
+      order: 'desc'
     },
-    keywords: '',
+    keywords: ''
   }
+
+  options$ = new Observable<ISortOptions>()
 
   private options$$ = new BehaviorSubject(this.sortOptions)
 
   constructor() {
+    this.sortVisibility$ = this.sortVisibility$$.asObservable()
     this.options$ = this.options$$.asObservable()
   }
 
@@ -50,14 +53,14 @@ export class SortbarManagerService {
     this.emitNewOptions()
   }
 
-  setKeywords(keywords: string) {
+  setKeywords(keywords: string): void {
     this.sortOptions.keywords = keywords
     this.emitNewOptions()
   }
 
-  onToggle(isVisible: boolean): void {
-    this.isSortVisible = isVisible
-    this.sortVisibility$.next(this.isSortVisible)
+  toggle(): void {
+    this.isSortVisible = !this.isSortVisible
+    this.sortVisibility$$.next(this.isSortVisible)
   }
 
   get classes(): ISortButtonsClasses {
@@ -65,7 +68,7 @@ export class SortbarManagerService {
       activeDate: this.sortOptions.sort.type === SortType.Date,
       activeViewsCount: this.sortOptions.sort.type === SortType.ViewsCount,
       activeByKeywords: this.sortOptions.sort.type === SortType.KeyWord,
-      order: this.sortOptions.sort.order,
+      order: this.sortOptions.sort.order
     }
   }
 
@@ -73,7 +76,7 @@ export class SortbarManagerService {
     return this.sortOptions
   }
 
-  emitNewOptions() {
+  emitNewOptions(): void {
     this.options$$.next(this.sortOptions)
   }
 }

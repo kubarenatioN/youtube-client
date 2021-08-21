@@ -1,55 +1,52 @@
 import { Injectable } from '@angular/core'
 import { Router } from '@angular/router'
 import { BehaviorSubject, Observable } from 'rxjs'
+import { delay } from 'rxjs/operators'
 import { IUser } from '../models/user.model'
 
-const LOCAL_STORAGE_TOKEN = 'user'
+const LOCAL_STORAGE_USER = 'user'
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class LoginService {
-  currentUser?: IUser
+  private currentUser = this.getUser()
 
-  isUserLogged$ = new Observable<boolean>()
+  user$ = new Observable<IUser | null>()
 
-  private isUserLogged$$ = new BehaviorSubject<boolean>(this.isUserLogged)
+  private user$$ = new BehaviorSubject<IUser | null>(this.currentUser)
 
   get isUserLogged(): boolean {
     return !!this.currentUser
   }
 
+  get username(): string | null {
+    return this.currentUser ? this.currentUser.login : null
+  }
+
   constructor(private router: Router) {
-    this.currentUser = this.getUser()
-    this.isUserLogged$ = this.isUserLogged$$.asObservable()
+    this.user$ = this.user$$.pipe(delay(500))
   }
 
-  getUser() {
-    const userString = localStorage.getItem(LOCAL_STORAGE_TOKEN)
+  private getUser(): IUser | null {
+    const userString = localStorage.getItem(LOCAL_STORAGE_USER)
     if (userString !== null) {
-      return JSON.parse(userString)
+      return JSON.parse(userString) as IUser
     }
-    return undefined
+    return null
   }
 
-  setUser(newUser: IUser) {
-    setTimeout(() => {
-      this.currentUser = newUser
-      localStorage.setItem(
-        LOCAL_STORAGE_TOKEN,
-        JSON.stringify(this.currentUser)
-      )
-      this.isUserLogged$$.next(true)
-      this.router.navigate(['search'])
-    }, 1000)
+  setUser(newUser: IUser): void {
+    this.currentUser = newUser
+    localStorage.setItem(LOCAL_STORAGE_USER, JSON.stringify(this.currentUser))
+    this.user$$.next(this.currentUser)
+    this.router.navigate(['search'])
   }
 
-  removeUser() {
-    setTimeout(() => {
-      localStorage.removeItem(LOCAL_STORAGE_TOKEN)
-      this.currentUser = undefined
-      this.isUserLogged$$.next(false)
-      this.router.navigate(['login'])
-    }, 1000)
+  removeUser(): void {
+    localStorage.removeItem(LOCAL_STORAGE_USER)
+    this.currentUser = null
+    this.user$$.next(this.currentUser)
+    this.router.navigate(['login'])
   }
 }

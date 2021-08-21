@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnDestroy, OnInit } from '@angular/core'
 import { Event, NavigationEnd, Router, RouterEvent } from '@angular/router'
+import { Subscription } from 'rxjs'
 import { filter } from 'rxjs/operators'
 import { LoginService } from 'src/app/auth/services/login.service'
 import { SearchService } from 'src/app/youtube/services/search.service'
@@ -8,10 +9,12 @@ import { SortbarManagerService } from 'src/app/youtube/services/sortbar-manager.
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-  isSearchPage!: boolean
+export class HeaderComponent implements OnInit, OnDestroy {
+  isSearchPage = false
+
+  userSubscription!: Subscription
 
   query = ''
 
@@ -26,37 +29,40 @@ export class HeaderComponent implements OnInit {
     router.events
       .pipe(filter((e: Event): e is RouterEvent => e instanceof NavigationEnd))
       .subscribe((e: RouterEvent) => {
-        // console.log('router event', e.url)
         this.isSearchPage = e.url === '/search'
       })
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.isSearchPage = this.router.url === '/search'
-    this.loginService.isUserLogged$.subscribe(isLogged => {
-      this.isUserLogged = isLogged
+    this.userSubscription = this.loginService.user$.subscribe(() => {
+      this.isUserLogged = this.loginService.isUserLogged
     })
   }
 
-  toggleSort() {
-    this.sortService.onToggle(!this.sortService.isSortVisible)
+  ngOnDestroy(): void {
+    this.userSubscription.unsubscribe()
   }
 
-  onSearch() {
+  toggleSort(): void {
+    this.sortService.toggle()
+  }
+
+  onSearch(): void {
     if (this.query.length > 2 && this.isSearchPage) {
       this.searchService.getVideos(this.query)
     }
   }
 
-  get username() {
-    return this.loginService.currentUser?.login || 'Your name'
+  get username(): string {
+    return this.loginService.username || 'Your name'
   }
 
-  logoutUser() {
+  logoutUser(): void {
     this.loginService.removeUser()
   }
 
-  navigateToLoginPage() {
+  navigateToLoginPage(): void {
     this.router.navigate(['login'])
   }
 }

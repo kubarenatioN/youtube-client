@@ -1,16 +1,16 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Subscription } from 'rxjs'
-import { IVideoItem } from '../../models/video-item.model'
+import { IVideoStatsItem } from '../../models/video-item.model'
 import { SearchService } from '../../services/search.service'
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss'],
+  styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit, OnDestroy {
-  video?: IVideoItem
+  video: IVideoStatsItem | null = null
 
   private videoSubscription!: Subscription
 
@@ -19,7 +19,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
     private searchService: SearchService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.videoSubscription = this.searchService.videoDetails$.subscribe(
       video => {
         this.video = video
@@ -29,7 +29,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
     this.searchService.getById(id)
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.videoSubscription.unsubscribe()
   }
 }

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component'
 import { CoreModule } from './core/core.module'
 import { SharedModule } from './shared/shared.module'
 import { AppRoutingModule } from './app-routing.module'
+import { INTERCEPTOR_PROVIDERS } from './core/interceptors/providers'
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,9 +15,9 @@ import { AppRoutingModule } from './app-routing.module'
     HttpClientModule,
     CoreModule,
     SharedModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [INTERCEPTOR_PROVIDERS],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

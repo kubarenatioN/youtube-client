@@ -1,149 +1,917 @@
 {
   "kind": "youtube#videoListResponse",
-  "etag": "p_B_20gmlZvgFGpqIFrvZ3cYHLE",
+  "etag": "Zb960pZ9S282nar82PrvV52bL_E",
   "items": [
     {
       "kind": "youtube#video",
-      "etag": "GfuS8pvAEJ673UnXAa3S23UkeZI",
-      "id": "EwMnAbjvZgs",
+      "etag": "5GX9kZqdhiOFfL1I31cI774jf1M",
+      "id": "PLGRbEhVeeQ",
+      "snippet": {
+        "publishedAt": "2021-08-19T01:50:01Z",
+        "channelId": "UC1MiVrMfNrs5Ma4BetX-asA",
+        "title": "OG vs NIGMA Carry Battle — New Meta Mid vs Unexpected Pick",
+        "description": "🔴Subscribe for More Videos: http://goo.gl/SS787Y\n►OG vs NIGMA Core Battle — New Meta Mid vs Unexpected Pick\n🎵dota2 ti9\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\nOur Team spent more than 14 hours everyday for uploading dota 2 highlights video. \nScan replays from 27 famous player and 51 minor player, and make sure only choose the best daily gameplay.\nIn order to filter 25+ replays, we are require to use up to 4x speed to watch every chosen replay.\nSpeed is the element factor to make sure everything that we upload is the most updated.\n\nWhat Do I Record and Edit Video with ? \nRecording: Nvidia Shadowplay \nEditing: Sony Vegas Pro 13, Power Director\nThumbnail: Sony Vegas Pro 13, Photoshop.\nIf you got any question, don't hesitate to ask us\n Pls email:  justwanplayagame@gmail.com\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n●Social Media:\n● Facebook: https://www.facebook.com/Justwanplayagame/\n● Twitter: https://twitter.com/justwanplayagam\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n🔥My Dota 2 Playlists:\n● Miracle, Always Miracle: https://goo.gl/Io5frD\n● Mushi, Be Like Mushi: https://goo.gl/4SvCee\n● Midone, The Solo Mid One: https://goo.gl/n29HVg\n● The International 2016 Highlights: https://goo.gl/SJfzuR\n● !Attacker, The Best Kunkka: https://goo.gl/GxY6Wc\n● Sumail, the Best Storm Spirit: https://goo.gl/hYiG9D\n● Dendi, The Living Legend: https://goo.gl/ejukAh\n● Arteezy, Positive Mental Attitude: https://goo.gl/BRjquU\n● w33, The Imba w33haa: https://goo.gl/Mwc7Pb\n● s4, The Son of Magnus: https://goo.gl/NcY5It\n● Ar1se, The Best Magnus: https://goo.gl/sYvMy7\n● Manila Major Epic Game: https://goo.gl/xLIQ5q\n● Dota 2 Random Proplay-: https://goo.gl/x2ynVV\n● TOP10/Best Moments of Tournament: https://goo.gl/5NJUH8\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nWelcome to my JustWant2PlayAGame Dota 2  channel\nHere the find highlights from random pub match, random pro match, major tournaments and many other interesting dota movies. \nRemember to SUBSCRIBE to be notified when we publish new videos or highlights!\n\n\nEnjoy and Make sure to subscribe to my channel if you liked the video!\n\n⭕Match id:\n 6141067092\n#dota2\n\nTag: Justwant2playagame,dota 2,dota,miracle-,highlights,gameplay,justwanplayagame,9k,9kmmr,m-god,miracle 10k mmr,10k mmr,10k,10kmmr,miracle 10k,miracle 10000,miracle 10000 mmr,miracle amer al barkawi,miracle dota 2,miracle dota,miracle sf dota 2,miracle sf juke,miracle invoker,nigma miracle,nigma miracle invoker,nigma miracle support,nigma,og,topson,sumail,w33,gh-god,gh,nigma gh,arteezy,abed,team og,team nigma,team eg,matumbaman,zai",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/PLGRbEhVeeQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/PLGRbEhVeeQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/PLGRbEhVeeQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/PLGRbEhVeeQ/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/PLGRbEhVeeQ/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "JustWant2PlayAGame",
+        "tags": [
+          "Justwant2playagame",
+          "dota 2",
+          "dota",
+          "miracle-",
+          "highlights",
+          "gameplay",
+          "justwanplayagame",
+          "9k",
+          "9kmmr",
+          "m-god",
+          "miracle 10k mmr",
+          "10k mmr",
+          "10k",
+          "10kmmr",
+          "miracle 10k",
+          "miracle 10000",
+          "miracle 10000 mmr",
+          "miracle amer al barkawi",
+          "miracle dota 2",
+          "miracle dota",
+          "miracle sf dota 2",
+          "miracle sf juke",
+          "miracle invoker",
+          "nigma miracle",
+          "nigma miracle invoker",
+          "nigma miracle support",
+          "nigma",
+          "og",
+          "topson",
+          "sumail",
+          "w33",
+          "gh-god",
+          "gh",
+          "nigma gh",
+          "arteezy",
+          "abed",
+          "team og",
+          "team nigma",
+          "team eg",
+          "matumbaman",
+          "zai"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "OG vs NIGMA Carry Battle — New Meta Mid vs Unexpected Pick",
+          "description": "🔴Subscribe for More Videos: http://goo.gl/SS787Y\n►OG vs NIGMA Core Battle — New Meta Mid vs Unexpected Pick\n🎵dota2 ti9\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\nOur Team spent more than 14 hours everyday for uploading dota 2 highlights video. \nScan replays from 27 famous player and 51 minor player, and make sure only choose the best daily gameplay.\nIn order to filter 25+ replays, we are require to use up to 4x speed to watch every chosen replay.\nSpeed is the element factor to make sure everything that we upload is the most updated.\n\nWhat Do I Record and Edit Video with ? \nRecording: Nvidia Shadowplay \nEditing: Sony Vegas Pro 13, Power Director\nThumbnail: Sony Vegas Pro 13, Photoshop.\nIf you got any question, don't hesitate to ask us\n Pls email:  justwanplayagame@gmail.com\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n●Social Media:\n● Facebook: https://www.facebook.com/Justwanplayagame/\n● Twitter: https://twitter.com/justwanplayagam\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n🔥My Dota 2 Playlists:\n● Miracle, Always Miracle: https://goo.gl/Io5frD\n● Mushi, Be Like Mushi: https://goo.gl/4SvCee\n● Midone, The Solo Mid One: https://goo.gl/n29HVg\n● The International 2016 Highlights: https://goo.gl/SJfzuR\n● !Attacker, The Best Kunkka: https://goo.gl/GxY6Wc\n● Sumail, the Best Storm Spirit: https://goo.gl/hYiG9D\n● Dendi, The Living Legend: https://goo.gl/ejukAh\n● Arteezy, Positive Mental Attitude: https://goo.gl/BRjquU\n● w33, The Imba w33haa: https://goo.gl/Mwc7Pb\n● s4, The Son of Magnus: https://goo.gl/NcY5It\n● Ar1se, The Best Magnus: https://goo.gl/sYvMy7\n● Manila Major Epic Game: https://goo.gl/xLIQ5q\n● Dota 2 Random Proplay-: https://goo.gl/x2ynVV\n● TOP10/Best Moments of Tournament: https://goo.gl/5NJUH8\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nWelcome to my JustWant2PlayAGame Dota 2  channel\nHere the find highlights from random pub match, random pro match, major tournaments and many other interesting dota movies. \nRemember to SUBSCRIBE to be notified when we publish new videos or highlights!\n\n\nEnjoy and Make sure to subscribe to my channel if you liked the video!\n\n⭕Match id:\n 6141067092\n#dota2\n\nTag: Justwant2playagame,dota 2,dota,miracle-,highlights,gameplay,justwanplayagame,9k,9kmmr,m-god,miracle 10k mmr,10k mmr,10k,10kmmr,miracle 10k,miracle 10000,miracle 10000 mmr,miracle amer al barkawi,miracle dota 2,miracle dota,miracle sf dota 2,miracle sf juke,miracle invoker,nigma miracle,nigma miracle invoker,nigma miracle support,nigma,og,topson,sumail,w33,gh-god,gh,nigma gh,arteezy,abed,team og,team nigma,team eg,matumbaman,zai"
+        },
+        "defaultAudioLanguage": "en"
+      },
       "statistics": {
-        "viewCount": "83891",
-        "likeCount": "3456",
-        "dislikeCount": "49",
+        "viewCount": "21554",
+        "likeCount": "139",
+        "dislikeCount": "15",
+        "favoriteCount": "0",
+        "commentCount": "18"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "H1FeAxIfVDdZLMNso1z3qIp8mDg",
+      "id": "F4kvp9OgEA4",
+      "snippet": {
+        "publishedAt": "2021-08-18T08:22:55Z",
+        "channelId": "UCsd6QWmQQe7J6nnocJjpPRQ",
+        "title": "САМЫЕ ГЛАВНЫЕ ИЗМЕНЕНИЯ ПАТЧА 7.30 | НОВЫЕ АГАНИМЫ | НОВЫЕ СКИЛЛЫ В DOTA 2",
+        "description": "Открывай мой личный сyндyк - https://bit.ly/3su4oKl\nСекретный код: PATCH730\nПаблик ВК: https://vk.com/samovar_dota2\nПо вопросам рекламы: https://vk.cc/8lBMQz\nЯ в ВК: https://vk.cc/ar99e4 \nE-mail: factsdota2@gmail.com\nСсылка на офф трейд: http://bit.ly/1ITz6jB \nПрисоединяйтесь, будет весело! \nProduction Music courtesy of Epidemic Sound!\nСАМЫЕ ГЛАВНЫЕ ИЗМЕНЕНИЯ ПАТЧА 7.30 | НОВЫЕ АГАНИМЫ В ПАТЧЕ 7.30 | НОВЫЕ СКИЛЛЫ В DOTA 2 | РАЗБОР ПАТЧА 7.30",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/F4kvp9OgEA4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/F4kvp9OgEA4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/F4kvp9OgEA4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/F4kvp9OgEA4/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/F4kvp9OgEA4/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ЧЕЛОВЕК-САМОВАР",
+        "tags": [
+          "Dota",
+          "Дота",
+          "патч дота 2",
+          "абуз дота 2",
+          "ммр дота 2",
+          "топ5 дота 2",
+          "имба дота 2",
+          "новый герой дота 2",
+          "2021 дота 2",
+          "человек-самовар",
+          "самовар дота 2",
+          "dota 2",
+          "dota 2 highlights",
+          "dota 2 tournament",
+          "САМЫЕ ГЛАВНЫЕ ИЗМЕНЕНИЯ ПАТЧА 7.30",
+          "НОВЫЕ СКИЛЛЫ В DOTA 2",
+          "дота 2 патч 7.30",
+          "дота 2 патчноут",
+          "дота 2 обновление 7.30",
+          "дота 2 разбор патча",
+          "дота 2 тинкер 7.30",
+          "дота 2 пит лорд 7.30",
+          "дота 2 андерлорд 7.30",
+          "дота 2 аганимы 7.30",
+          "дота 2 аганим шарды 7.30",
+          "дота 2 новые аганимы"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "САМЫЕ ГЛАВНЫЕ ИЗМЕНЕНИЯ ПАТЧА 7.30 | НОВЫЕ АГАНИМЫ | НОВЫЕ СКИЛЛЫ В DOTA 2",
+          "description": "Открывай мой личный сyндyк - https://bit.ly/3su4oKl\nСекретный код: PATCH730\nПаблик ВК: https://vk.com/samovar_dota2\nПо вопросам рекламы: https://vk.cc/8lBMQz\nЯ в ВК: https://vk.cc/ar99e4 \nE-mail: factsdota2@gmail.com\nСсылка на офф трейд: http://bit.ly/1ITz6jB \nПрисоединяйтесь, будет весело! \nProduction Music courtesy of Epidemic Sound!\nСАМЫЕ ГЛАВНЫЕ ИЗМЕНЕНИЯ ПАТЧА 7.30 | НОВЫЕ АГАНИМЫ В ПАТЧЕ 7.30 | НОВЫЕ СКИЛЛЫ В DOTA 2 | РАЗБОР ПАТЧА 7.30"
+        },
+        "defaultAudioLanguage": "ru"
+      },
+      "statistics": {
+        "viewCount": "158477",
+        "likeCount": "6079",
+        "dislikeCount": "302",
+        "favoriteCount": "0",
+        "commentCount": "688"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "Qt8WKgm-zKc-hJqR3sm0i1pDUrw",
+      "id": "vR_y5uTnF78",
+      "snippet": {
+        "publishedAt": "2021-08-18T08:37:16Z",
+        "channelId": "UCfsOfLvadg89Bx8Sv_6WERg",
+        "title": "7.30 NEW PATCH - BIGGEST CHANGES - 7.30 GAMEPLAY UPDATE DOTA 2",
+        "description": "7.30 PATCH CHANGE LOG https://www.dota2.com/patches/7.30\n7.30 NEW PATCH DOTA 2\nSUBSCRIBE ROAD TO 1 MILLION :D",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/vR_y5uTnF78/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/vR_y5uTnF78/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/vR_y5uTnF78/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/vR_y5uTnF78/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/vR_y5uTnF78/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "NoobFromUA",
+        "tags": [
+          "Dota 2",
+          "dota",
+          "noobfromua",
+          "highlights",
+          "best",
+          "ti10",
+          "7.30",
+          "patch",
+          "new",
+          "biggest",
+          "changes",
+          "imba",
+          "update"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "7.30 NEW PATCH - BIGGEST CHANGES - 7.30 GAMEPLAY UPDATE DOTA 2",
+          "description": "7.30 PATCH CHANGE LOG https://www.dota2.com/patches/7.30\n7.30 NEW PATCH DOTA 2\nSUBSCRIBE ROAD TO 1 MILLION :D"
+        },
+        "defaultAudioLanguage": "en"
+      },
+      "statistics": {
+        "viewCount": "118914",
+        "likeCount": "1340",
+        "dislikeCount": "82",
+        "favoriteCount": "0",
+        "commentCount": "343"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "19kvXc21R1r7AGGzV0HHZG4rzJI",
+      "id": "rWc1vJXbp78",
+      "snippet": {
+        "publishedAt": "2021-08-19T11:30:18Z",
+        "channelId": "UC4HfMLhNP7oVmF0wJMAU_1g",
+        "title": "IT'S 11000MMR INVOKER | EPIC MIKOTO INVOKER 200IQ SUNSTRIKE | Dota 2 Invoker",
+        "description": "IT'S 11000MMR INVOKER | EPIC MIKOTO INVOKER 200IQ SUNSTRIKE\n\n👍👍👍 GUYS!!! Please help us by SUBMITTING your Pro INVOKER replays: http://bit.ly/3nAOTwc\n\n#Dota2Invoker #DailyInvoker #Dota2\n\nThank you so much for the support!!!\n\n00:00\u200b\u200b Laning Phase\n05:04 Highlights\n------------\n\n👍 Subscribe For More Videos: https://goo.gl/fGBfy5\n\n👍 Like Fb Page: https://www.facebook.com/Dota2InvokerOfficial/\n\n-----------------------\n\n----------------------",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/rWc1vJXbp78/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/rWc1vJXbp78/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/rWc1vJXbp78/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/rWc1vJXbp78/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/rWc1vJXbp78/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Dota 2 Invoker",
+        "tags": [
+          "Dota 2 Invoker",
+          "Dota 2",
+          "Invoker",
+          "Dota",
+          "miracle",
+          "miracle invoker",
+          "miracle dota 2",
+          "invoker dota 2",
+          "miracle-",
+          "miracle invoker dota 2",
+          "invoker dota 2 refresher",
+          "dota 2 highlights",
+          "vurtune invoker",
+          "vurtune invoker dota 2",
+          "miracle invoekr vs broodmother",
+          "invoker vs morphling",
+          "7.28 dota 2",
+          "dota 2 7.28",
+          "hoodwink dota 2",
+          "invoker 7.28",
+          "7.28 patch",
+          "sumail invoker",
+          "dota 2 pro",
+          "invoker 7.29",
+          "7.29 invoker",
+          "dawnbreaker dota 2"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "IT'S 11000MMR INVOKER | EPIC MIKOTO INVOKER 200IQ SUNSTRIKE | Dota 2 Invoker",
+          "description": "IT'S 11000MMR INVOKER | EPIC MIKOTO INVOKER 200IQ SUNSTRIKE\n\n👍👍👍 GUYS!!! Please help us by SUBMITTING your Pro INVOKER replays: http://bit.ly/3nAOTwc\n\n#Dota2Invoker #DailyInvoker #Dota2\n\nThank you so much for the support!!!\n\n00:00\u200b\u200b Laning Phase\n05:04 Highlights\n------------\n\n👍 Subscribe For More Videos: https://goo.gl/fGBfy5\n\n👍 Like Fb Page: https://www.facebook.com/Dota2InvokerOfficial/\n\n-----------------------\n\n----------------------"
+        },
+        "defaultAudioLanguage": "en"
+      },
+      "statistics": {
+        "viewCount": "988",
+        "likeCount": "64",
+        "dislikeCount": "1",
+        "favoriteCount": "0",
+        "commentCount": "38"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "rZVgQBbMXJC1gy65EdAwml7smQ8",
+      "id": "zA2EGwSbNaI",
+      "snippet": {
+        "publishedAt": "2021-08-18T04:07:43Z",
+        "channelId": "UCn35dVa5DJ1jVSWKwZpgrGw",
+        "title": "Новый ПАТЧ 7.30 🔥 Полный ОБЗОР и ИМБА герои PATCH 7.30 Dota 2",
+        "description": "В сегодняшнем видео новый патч 7.30 в игре Дота 2. New patch 7.30 Dota 2.\nГруппа ВК: https://vk.com/youtubeanalitika\nНаши Инстаграмы:\nhttps://www.instagram.com/joombler/\nhttps://www.instagram.com/tommyharddota2\n\n#dota2 #dota #дота2 #дота",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/zA2EGwSbNaI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/zA2EGwSbNaI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/zA2EGwSbNaI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/zA2EGwSbNaI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/zA2EGwSbNaI/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Аналитика Ошибок",
+        "tags": [
+          "гайды дота 2",
+          "dota 2 guide",
+          "ошибки дота 2",
+          "обучение дота 2",
+          "школа дота 2",
+          "как играть в дота 2",
+          "dota 2",
+          "дота 2",
+          "аналитика ошибок",
+          "новый патч",
+          "патч дота 2",
+          "patch dota 2",
+          "ммр дота 2",
+          "рейтинг дота 2",
+          "обновление дота 2",
+          "патч 7.30",
+          "7.30 дота 2",
+          "7.30 dota 2",
+          "patch 7.30"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "Новый ПАТЧ 7.30 🔥 Полный ОБЗОР и ИМБА герои PATCH 7.30 Dota 2",
+          "description": "В сегодняшнем видео новый патч 7.30 в игре Дота 2. New patch 7.30 Dota 2.\nГруппа ВК: https://vk.com/youtubeanalitika\nНаши Инстаграмы:\nhttps://www.instagram.com/joombler/\nhttps://www.instagram.com/tommyharddota2\n\n#dota2 #dota #дота2 #дота"
+        },
+        "defaultAudioLanguage": "ru"
+      },
+      "statistics": {
+        "viewCount": "127183",
+        "likeCount": "3238",
+        "dislikeCount": "225",
+        "favoriteCount": "0",
+        "commentCount": "385"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "B_XV2dO72VgP9uxZCn9gaA4YcMk",
+      "id": "dclv0VEmmUg",
+      "snippet": {
+        "publishedAt": "2021-08-19T04:00:09Z",
+        "channelId": "UCt9kDudA1tTXS7TR-g2X_-A",
+        "title": "ПАТЧ 7.30 | СОЛОХАРД ТЕЧИС НА 7К ММР | Травоман Дота 2",
+        "description": "https://loot.farm/?utm_source=ТраВоМаН — Моментальный обмен вещей из CS:GO, H1Z1, DOTA2, RUST\n\n\nТаймкоды:\n00:00 Лут.фарм\n00:30 Вступление\n01:30 Солохард течис\n11:20 Начинаем комбекать\n20:00 Сложности командной игры\n36:00 Критический рошан\n\n\n💪Стримлю здесь - https://www.twitch.tv/tpabomah\n🤓\"Сосиска Травомана\" - предупреждаю о стримах и видео https://t.me/tapoboma\n\n💰Бесплатная аналитика по Доте и КС - http://bit.ly/travostavka или @travobet в телеге\n👉Подпишись на этот канал! - https://www.youtube.com/channel/UCt9kDudA1tTXS7TR-g2X_-A?sub_confirmation=1\n🔥Самые яркие моменты с ютуба и стримов за 30 секунд - https://www.tiktok.com/@tpabomah_tiktok\n😈Хочешь комп, как у меня? По промокоду \"Травоман\" скидка! - https://boiling-machine.ru/blog/aktsii/TPABOMAH/\n👉Ответ на клевету в мой адрес - https://youtu.be/Cae7Gie61c0\n🤓Как я стал ютубером - https://www.instagram.com/zakladka__/\n😈Руководство героя в Доте - https://bit.ly/2Wiih0C\n👨\u200d👩\u200d👧\u200d👧Все новости в группе ВК - https://bit.ly/2QIkeOH\n\n#dota2 #Techies #Минер\n\n📜 Частые вопросы.\n1. Почему Травоман? --- Лет десять назад играл в браузерную стратегию Travian.\n2. Как начал играть на минере? --- В 2016 лузстрикнул с 4200 на 3800 и начал его спамить\n3. Не надоело на одном герое? --- Нет\n4. Кого берешь, если минер в бане? --- бейна\n5. Кто контрит минера? --- Герои со встроенным бкб, резистом к магии, быстрым темпом, суммонами и иллюзиями\n6. Как кидать мины в точку? --- Выделить героя и мины через шифт, использовать скил в иконку мин\n7. Cколько игр на минере? --- около 4 тысяч\n8. Как выделить несколько мин из пачки? --- Выделить все мины и шифт+лкм по лишним, они уберутся оттуда\n9. Что за музыка у Травомана? --- Либо Инт2016, либо пак Desert (оба в доте на торговой площадке)",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/dclv0VEmmUg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/dclv0VEmmUg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/dclv0VEmmUg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/dclv0VEmmUg/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/dclv0VEmmUg/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ТраВоМаН",
+        "tags": [
+          "Dota2",
+          "techies",
+          "Течис",
+          "miner",
+          "Дота2",
+          "Минер",
+          "техник",
+          "текиз",
+          "Травоман",
+          "tpabomah",
+          "топ минер",
+          "топ течис",
+          "лучший течис",
+          "задрот минера",
+          "задрот течиса",
+          "dota 2",
+          "dota 2 highlights",
+          "dota"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ru",
+        "localized": {
+          "title": "ПАТЧ 7.30 | СОЛОХАРД ТЕЧИС НА 7К ММР | Травоман Дота 2",
+          "description": "https://loot.farm/?utm_source=ТраВоМаН — Моментальный обмен вещей из CS:GO, H1Z1, DOTA2, RUST\n\n\nТаймкоды:\n00:00 Лут.фарм\n00:30 Вступление\n01:30 Солохард течис\n11:20 Начинаем комбекать\n20:00 Сложности командной игры\n36:00 Критический рошан\n\n\n💪Стримлю здесь - https://www.twitch.tv/tpabomah\n🤓\"Сосиска Травомана\" - предупреждаю о стримах и видео https://t.me/tapoboma\n\n💰Бесплатная аналитика по Доте и КС - http://bit.ly/travostavka или @travobet в телеге\n👉Подпишись на этот канал! - https://www.youtube.com/channel/UCt9kDudA1tTXS7TR-g2X_-A?sub_confirmation=1\n🔥Самые яркие моменты с ютуба и стримов за 30 секунд - https://www.tiktok.com/@tpabomah_tiktok\n😈Хочешь комп, как у меня? По промокоду \"Травоман\" скидка! - https://boiling-machine.ru/blog/aktsii/TPABOMAH/\n👉Ответ на клевету в мой адрес - https://youtu.be/Cae7Gie61c0\n🤓Как я стал ютубером - https://www.instagram.com/zakladka__/\n😈Руководство героя в Доте - https://bit.ly/2Wiih0C\n👨\u200d👩\u200d👧\u200d👧Все новости в группе ВК - https://bit.ly/2QIkeOH\n\n#dota2 #Techies #Минер\n\n📜 Частые вопросы.\n1. Почему Травоман? --- Лет десять назад играл в браузерную стратегию Travian.\n2. Как начал играть на минере? --- В 2016 лузстрикнул с 4200 на 3800 и начал его спамить\n3. Не надоело на одном герое? --- Нет\n4. Кого берешь, если минер в бане? --- бейна\n5. Кто контрит минера? --- Герои со встроенным бкб, резистом к магии, быстрым темпом, суммонами и иллюзиями\n6. Как кидать мины в точку? --- Выделить героя и мины через шифт, использовать скил в иконку мин\n7. Cколько игр на минере? --- около 4 тысяч\n8. Как выделить несколько мин из пачки? --- Выделить все мины и шифт+лкм по лишним, они уберутся оттуда\n9. Что за музыка у Травомана? --- Либо Инт2016, либо пак Desert (оба в доте на торговой площадке)"
+        },
+        "defaultAudioLanguage": "ru"
+      },
+      "statistics": {
+        "viewCount": "57292",
+        "likeCount": "2113",
+        "dislikeCount": "54",
+        "favoriteCount": "0",
+        "commentCount": "179"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "LCj15VncSwQsfwWM_NuGuOmJx78",
+      "id": "gSQ7zmY6eDQ",
+      "snippet": {
+        "publishedAt": "2021-08-17T16:51:37Z",
+        "channelId": "UCRA-_BqtB0_9FForubZ-8gQ",
+        "title": "ПАТЧ 7.30 – ПОСМОТРИ ЭТО ВИДЕО ПЕРЕД ВЫХОДОМ ГЛОБАЛЬНОГО ОБНОВЛЕНИЯ / DOTA 2",
+        "description": "В этом видео ПАТЧ 7.30 – ПОСМОТРИ ЭТО ВИДЕО ПЕРЕД ВЫХОДОМ ГЛОБАЛЬНОГО ОБНОВЛЕНИЯ / DOTA 2 в Dota Universe\n\nЯ Вконтакте: https://vk.com/gogovadim\nTelegram: https://t.me/godotauni\nГруппа Вконтакте: https://vk.com/public188015708\nМатериальная помощь проекту – 5228 6005 0153 7387 (сбербанк)\n\nПредыдущие видео: \n► НОВАЯ АРКАНА, ПРЕДМЕТЫ В 7.30, ТРИ МАЖОРА И НОВЫЕ СЛИВЫ VALVE / DOTA 2 https://youtu.be/r2kQ8mpw-Ms\n► DIVINE RAPIER – СЕКРЕТНЫЙ ИВЕНТ, TROVE CARAFE 2021 И НОВЫЕ СЛИВЫ VALVE / DOTA 2 https://youtu.be/tqSuFEWfUiI\n► ИНСАЙДЫ VALVE: ОТМЕНА ВТОРОГО COLLECTOR'S CACHE 2021 И НОВЫЕ ТИЗЕРЫ / DOTA 2 https://youtu.be/0c3olQcPo9w",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/gSQ7zmY6eDQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/gSQ7zmY6eDQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/gSQ7zmY6eDQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/gSQ7zmY6eDQ/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/gSQ7zmY6eDQ/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Dota Universe",
+        "tags": [
+          "патч 7.30",
+          "дота 2 патч 7.30",
+          "патч 7.30 дота 2",
+          "патч 7.30 дата выхода",
+          "дата выхода патч 7.30",
+          "dota 2 7.30",
+          "7.30 dota 2",
+          "новый герой 7.30",
+          "новые предметы 7.30",
+          "дота 2 новые сливы 7.30",
+          "новые сливы дота 2",
+          "дота 2 новые сливы",
+          "7.30 патч дота 2",
+          "7.30 патч",
+          "когда выйдет патч 7.30",
+          "когда патч 7.30 дота 2",
+          "новые предметы дота 2",
+          "7.30 список изменений",
+          "7.30 изменения",
+          "ПАТЧ 7.30 – ПОСМОТРИ ЭТО ВИДЕО ПЕРЕД ВЫХОДОМ ГЛОБАЛЬНОГО ОБНОВЛЕНИЯ / DOTA 2",
+          "дота 2",
+          "dota 2"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "ПАТЧ 7.30 – ПОСМОТРИ ЭТО ВИДЕО ПЕРЕД ВЫХОДОМ ГЛОБАЛЬНОГО ОБНОВЛЕНИЯ / DOTA 2",
+          "description": "В этом видео ПАТЧ 7.30 – ПОСМОТРИ ЭТО ВИДЕО ПЕРЕД ВЫХОДОМ ГЛОБАЛЬНОГО ОБНОВЛЕНИЯ / DOTA 2 в Dota Universe\n\nЯ Вконтакте: https://vk.com/gogovadim\nTelegram: https://t.me/godotauni\nГруппа Вконтакте: https://vk.com/public188015708\nМатериальная помощь проекту – 5228 6005 0153 7387 (сбербанк)\n\nПредыдущие видео: \n► НОВАЯ АРКАНА, ПРЕДМЕТЫ В 7.30, ТРИ МАЖОРА И НОВЫЕ СЛИВЫ VALVE / DOTA 2 https://youtu.be/r2kQ8mpw-Ms\n► DIVINE RAPIER – СЕКРЕТНЫЙ ИВЕНТ, TROVE CARAFE 2021 И НОВЫЕ СЛИВЫ VALVE / DOTA 2 https://youtu.be/tqSuFEWfUiI\n► ИНСАЙДЫ VALVE: ОТМЕНА ВТОРОГО COLLECTOR'S CACHE 2021 И НОВЫЕ ТИЗЕРЫ / DOTA 2 https://youtu.be/0c3olQcPo9w"
+        }
+      },
+      "statistics": {
+        "viewCount": "54835",
+        "likeCount": "1879",
+        "dislikeCount": "134",
         "favoriteCount": "0",
         "commentCount": "222"
       }
     },
     {
       "kind": "youtube#video",
-      "etag": "zgK9mEE90_ydIhgG4ik_CTYUVwk",
-      "id": "lehtVz-kOQs",
+      "etag": "hRjCQWRexGcJJX6xwoiPctcRk-A",
+      "id": "GRvfCkcYa1c",
+      "snippet": {
+        "publishedAt": "2021-08-15T21:19:23Z",
+        "channelId": "UC18NaGQLruOEw65eQE3bNbg",
+        "title": "Dota 2 WTF Moments 409",
+        "description": "GET 40% BONUS with CODE: DWTF\nhttps://csgo.net\nWatafakers, use the hidden CODES in the video here - https://extr.gg/KCvXT8 \n\nSubmit your clip / Manda tu video: \nhttps://dotawatafak.com/category/sube-tu-jugada/\n\nFollow TheFatRat\nhttps://www.youtube.com/user/ThisIsTheFatRat\n\nInstagram:\nhttps://www.instagram.com/dota_watafak_real/\nFacebook\nhttps://www.facebook.com/DotaWatafak\nTwitter:\nhttps://twitter.com/Dota2WTF",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/GRvfCkcYa1c/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/GRvfCkcYa1c/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/GRvfCkcYa1c/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/GRvfCkcYa1c/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "Dota Watafak",
+        "tags": [
+          "dota",
+          "dota2",
+          "martius",
+          "darduin",
+          "Dota",
+          "sfm",
+          "dotawtf",
+          "Source Filmmaker",
+          "dota 2 rampage",
+          "dota2 edit",
+          "dota2 3d",
+          "dota 2 rampages",
+          "dota rampages",
+          "dota watafak",
+          "dota 2 funny moments",
+          "dota 2 highlights",
+          "dota 2",
+          "dota movie"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "Dota 2 WTF Moments 409",
+          "description": "GET 40% BONUS with CODE: DWTF\nhttps://csgo.net\nWatafakers, use the hidden CODES in the video here - https://extr.gg/KCvXT8 \n\nSubmit your clip / Manda tu video: \nhttps://dotawatafak.com/category/sube-tu-jugada/\n\nFollow TheFatRat\nhttps://www.youtube.com/user/ThisIsTheFatRat\n\nInstagram:\nhttps://www.instagram.com/dota_watafak_real/\nFacebook\nhttps://www.facebook.com/DotaWatafak\nTwitter:\nhttps://twitter.com/Dota2WTF"
+        },
+        "defaultAudioLanguage": "en"
+      },
       "statistics": {
-        "viewCount": "448604",
-        "likeCount": "16130",
-        "dislikeCount": "196",
+        "viewCount": "515878",
+        "likeCount": "20384",
+        "dislikeCount": "691",
+        "favoriteCount": "0",
+        "commentCount": "893"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "1fjq_H1_oykoFUyEFRF80dlyYwg",
+      "id": "J6zAixbDGW0",
+      "snippet": {
+        "publishedAt": "2021-08-19T12:07:01Z",
+        "channelId": "UCwI9DhoGEziLUxTpK8H77jw",
+        "title": "Arteezy Tiny [23/1/13] Patch 7.30 - Dota 2 Pro Gameplay [Watch & Learn]",
+        "description": "Miracle Techies 45 Frags | EPIC 2 Hours Game ► https://www.youtube.com/watch?v=jEelrmAAxyM\n\nSubscribe and LEARN to play like PRO ► http://bit.ly/Subscribe_for__more\n\nTop MMR Plays / Dota 2 Pro Gameplay is Educational Channel about e-sport Dota 2 competitive scene. Watch replays of professional players, highest MMR battles and LEARN from you favourite Pro players!\n\n► Remember to subscribe to be notified when we release new #Dota2 videos! \n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\nMost viewed replays:\n\nMiracle Techies 45 Frags | EPIC 2 Hours ► https://www.youtube.com/watch?v=jEelrmAAxyM\n\nMiracle Super Carry Juggernaut ► https://youtu.be/I7P4CBJ-ths\nMiracle Refresher/Octarine Spectre ► https://youtu.be/J_4eWYS0ehE\nDendi Earthshaker - Na'Vi ► https://youtu.be/rlYd1V_aOxc\nw33 Techies ► https://youtu.be/IR11HtVGnBk\n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\nArteezy Tiny [23/1/13] Patch 7.30 - Dota 2 Pro Gameplay [Watch & Learn]",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/J6zAixbDGW0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/J6zAixbDGW0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/J6zAixbDGW0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/J6zAixbDGW0/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/J6zAixbDGW0/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Dota 2 Pro Gameplay [Watch & Learn]",
+        "tags": [
+          "dota 2",
+          "dota 2 pro replays",
+          "dota 2 pro gameplay",
+          "dota 2 full game",
+          "dota 2 mmr",
+          "dota 2 ranked match",
+          "dota 2 replay",
+          "dota 2 top mmr",
+          "dota 2 pro replay",
+          "dota 2 learn",
+          "watch dota 2 pro replay",
+          "top mmr plays",
+          "Arteezy Tiny",
+          "dota 2 arteezy full game",
+          "dota 2 tiny guide",
+          "dota 2 tiny гайд",
+          "дота 2 тини гайд",
+          "eg arteezy",
+          "dota 2 7.30",
+          "dota 2 patch 7.30"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "Arteezy Tiny [23/1/13] Patch 7.30 - Dota 2 Pro Gameplay [Watch & Learn]",
+          "description": "Miracle Techies 45 Frags | EPIC 2 Hours Game ► https://www.youtube.com/watch?v=jEelrmAAxyM\n\nSubscribe and LEARN to play like PRO ► http://bit.ly/Subscribe_for__more\n\nTop MMR Plays / Dota 2 Pro Gameplay is Educational Channel about e-sport Dota 2 competitive scene. Watch replays of professional players, highest MMR battles and LEARN from you favourite Pro players!\n\n► Remember to subscribe to be notified when we release new #Dota2 videos! \n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\nMost viewed replays:\n\nMiracle Techies 45 Frags | EPIC 2 Hours ► https://www.youtube.com/watch?v=jEelrmAAxyM\n\nMiracle Super Carry Juggernaut ► https://youtu.be/I7P4CBJ-ths\nMiracle Refresher/Octarine Spectre ► https://youtu.be/J_4eWYS0ehE\nDendi Earthshaker - Na'Vi ► https://youtu.be/rlYd1V_aOxc\nw33 Techies ► https://youtu.be/IR11HtVGnBk\n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\nArteezy Tiny [23/1/13] Patch 7.30 - Dota 2 Pro Gameplay [Watch & Learn]"
+        },
+        "defaultAudioLanguage": "en"
+      },
+      "statistics": {
+        "viewCount": "147",
+        "likeCount": "10",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "1"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "PUSZkW9BnwibAr7O6w85Nf__DCQ",
+      "id": "ymJifWbrZ4M",
+      "snippet": {
+        "publishedAt": "2021-08-18T04:20:08Z",
+        "channelId": "UCNRQ-DWUXf4UVN9L31Y9f3Q",
+        "title": "7.30 Hero Changes and Aghanim's Scepter Dota 2",
+        "description": "Submit Dota 2 Highlights here: https://forms.gle/XuBEhUbBDEi4TTAK7\nhttps://www.dota2.com/patches/7.30\n\nGet an AD-Free Experience with the Brave Browser: https://brave.com/dot636\nPatreon: https://www.patreon.com/dotacinema?fan_landing=true\n\nDota 2 is a multiplayer online battle arena (MOBA) video game developed and published by Valve. \n\n#dota2",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ymJifWbrZ4M/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ymJifWbrZ4M/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ymJifWbrZ4M/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "DotaCinema",
+        "tags": [
+          "Dota 2",
+          "dota",
+          "dota 2 7.30",
+          "7.30 dota 2",
+          "dota 2 aghanim's scepter",
+          "dota 2 aghanims scepter",
+          "aghanim's scepter dota 2",
+          "aghanims scepter dota 2"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "7.30 Hero Changes and Aghanim's Scepter Dota 2",
+          "description": "Submit Dota 2 Highlights here: https://forms.gle/XuBEhUbBDEi4TTAK7\nhttps://www.dota2.com/patches/7.30\n\nGet an AD-Free Experience with the Brave Browser: https://brave.com/dot636\nPatreon: https://www.patreon.com/dotacinema?fan_landing=true\n\nDota 2 is a multiplayer online battle arena (MOBA) video game developed and published by Valve. \n\n#dota2"
+        },
+        "defaultAudioLanguage": "zxx"
+      },
+      "statistics": {
+        "viewCount": "165895",
+        "likeCount": "1363",
+        "dislikeCount": "47",
+        "favoriteCount": "0",
+        "commentCount": "309"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "Jeq3d2tss2S5XYxCQXKZuj-KiRc",
+      "id": "x8D05PFr83w",
+      "snippet": {
+        "publishedAt": "2021-08-18T11:44:26Z",
+        "channelId": "UC1YCxISkweN5vLsOJ0zElZQ",
+        "title": "MOST BROKEN WTF BUG in Dota 2 History you have EVER seen! (7.30 Patch)",
+        "description": "► Subscribe for more Videos here: http://bit.ly/hOlyhexOr\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n►► Full 7.30 Playlist: https://www.youtube.com/playlist?list=PL37CzvwiWXogg3OUDGmaCVrTO5fME5qIu\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nMore Videos: http://www.youtube.com/user/hOlyhexOr/videos\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n►►Social Media:\n◉ Facebook: http://bit.ly/hexOrFB\n◉ Twitter: http://bit.ly/hexOrTwitter\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nInclude great music in your content, for more info go to: https://uzermusic.com?ref=fixt\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nMusic Supplied by:\nBreaking Point 5 - Rannar Sillard \nCall of the north - Niklas Johansson \nChoirs Of War 1 - Dream Cave\nEdgar Hopp - Elysium\nEmerald Dream by Niklas Johansson \n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nMusic provided by EpidemicSound.com\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nIntro & Outro created by: www.youtube.com/user/TbdTofGermany\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nMake sure to subscribe to my channel if you liked the video!\n►► Subscribe for more: http://bit.ly/hOlyhexOr",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/x8D05PFr83w/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/x8D05PFr83w/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/x8D05PFr83w/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/x8D05PFr83w/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/x8D05PFr83w/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "hOlyhexOr",
+        "tags": [
+          "dota",
+          "dota2",
+          "dota 2",
+          "dota 2 patch",
+          "дота 2",
+          "dota 2 bugs",
+          "dota 2 tips and tricks",
+          "dota 2 patch 7.30",
+          "dota 7.30",
+          "patch 7.30",
+          "dota 2 broken builds",
+          "dota 2 update",
+          "dota 2 gameplay",
+          "7.30 dota 2",
+          "dota 2 bug",
+          "bugs dota 2",
+          "bug dota 2",
+          "7.30 bug dota 2",
+          "7.30 patch bug",
+          "biggest bug dota 2",
+          "7.30 dota 2 bug",
+          "7.30 dota 2 bugs",
+          "craziest bug dota 2",
+          "biggest bug dota 2 history",
+          "biggest bug 7.30 patch",
+          "most broken wtf bug 7.30 dota 2",
+          "meepo bug 7.30",
+          "meepo shard bug 7.30"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "MOST BROKEN WTF BUG in Dota 2 History you have EVER seen! (7.30 Patch)",
+          "description": "► Subscribe for more Videos here: http://bit.ly/hOlyhexOr\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n►► Full 7.30 Playlist: https://www.youtube.com/playlist?list=PL37CzvwiWXogg3OUDGmaCVrTO5fME5qIu\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nMore Videos: http://www.youtube.com/user/hOlyhexOr/videos\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n►►Social Media:\n◉ Facebook: http://bit.ly/hexOrFB\n◉ Twitter: http://bit.ly/hexOrTwitter\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nInclude great music in your content, for more info go to: https://uzermusic.com?ref=fixt\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nMusic Supplied by:\nBreaking Point 5 - Rannar Sillard \nCall of the north - Niklas Johansson \nChoirs Of War 1 - Dream Cave\nEdgar Hopp - Elysium\nEmerald Dream by Niklas Johansson \n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nMusic provided by EpidemicSound.com\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nIntro & Outro created by: www.youtube.com/user/TbdTofGermany\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nMake sure to subscribe to my channel if you liked the video!\n►► Subscribe for more: http://bit.ly/hOlyhexOr"
+        },
+        "defaultAudioLanguage": "en"
+      },
+      "statistics": {
+        "viewCount": "18913",
+        "likeCount": "171",
+        "dislikeCount": "16",
+        "favoriteCount": "0",
+        "commentCount": "50"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "r1UlyBtcjmTog4EC9DKXcPsvDXc",
+      "id": "LiOW16WVc1w",
+      "snippet": {
+        "publishedAt": "2021-08-18T11:52:23Z",
+        "channelId": "UCsd6QWmQQe7J6nnocJjpPRQ",
+        "title": "НОВЫЕ ПРЕДМЕТЫ В ПАТЧЕ 7.30 | СЕКРЕТЫ И ФИШКИ | ПОДРОБНЫЙ РАЗБОР | DOTA 2",
+        "description": "Открывай мой личный сyндyк - https://bit.ly/3su4oKl\nСекретный код: OBNOVA\nПаблик ВК: https://vk.com/samovar_dota2\nПо вопросам рекламы: https://vk.cc/8lBMQz\nЯ в ВК: https://vk.cc/ar99e4 \nE-mail: factsdota2@gmail.com\nСсылка на офф трейд: http://bit.ly/1ITz6jB \nПрисоединяйтесь, будет весело! \nProduction Music courtesy of Epidemic Sound!\nНОВЫЕ ПРЕДМЕТЫ В ПАТЧЕ 7.30 | СЕКРЕТЫ И ФИШКИ | ПОДРОБНЫЙ РАЗБОР | DOTA 2\nНОВЫЕ ИТЕМЫ ПАТЧ 7.30 | АГАНИМЫ ДОТА 2 | АНАЛИЗ НОВЫХ ПРЕДМЕТОВ",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/LiOW16WVc1w/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/LiOW16WVc1w/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/LiOW16WVc1w/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/LiOW16WVc1w/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/LiOW16WVc1w/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ЧЕЛОВЕК-САМОВАР",
+        "tags": [
+          "Dota",
+          "Дота",
+          "патч дота 2",
+          "абуз дота 2",
+          "ммр дота 2",
+          "топ5 дота 2",
+          "имба дота 2",
+          "новый герой дота 2",
+          "2021 дота 2",
+          "человек-самовар",
+          "самовар дота 2",
+          "dota 2",
+          "dota 2 highlights",
+          "dota 2 tournament",
+          "НОВЫЕ ПРЕДМЕТЫ В ПАТЧЕ 7.30 | СЕКРЕТЫ И ФИШКИ | ПОДРОБНЫЙ РАЗБОР | DOTA 2",
+          "новые предметы дота 2",
+          "новые итемы дота 2",
+          "дота 7.30",
+          "разбор итемов 7.30",
+          "анализ новых предметов дота 2",
+          "обновление 7.30",
+          "обнова 7.30",
+          "дота 2 патч 730",
+          "дота 2 7.30 новый герой",
+          "witchbane dota",
+          "ascetic's cap dota 2"
+        ],
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "НОВЫЕ ПРЕДМЕТЫ В ПАТЧЕ 7.30 | СЕКРЕТЫ И ФИШКИ | ПОДРОБНЫЙ РАЗБОР | DOTA 2",
+          "description": "Открывай мой личный сyндyк - https://bit.ly/3su4oKl\nСекретный код: OBNOVA\nПаблик ВК: https://vk.com/samovar_dota2\nПо вопросам рекламы: https://vk.cc/8lBMQz\nЯ в ВК: https://vk.cc/ar99e4 \nE-mail: factsdota2@gmail.com\nСсылка на офф трейд: http://bit.ly/1ITz6jB \nПрисоединяйтесь, будет весело! \nProduction Music courtesy of Epidemic Sound!\nНОВЫЕ ПРЕДМЕТЫ В ПАТЧЕ 7.30 | СЕКРЕТЫ И ФИШКИ | ПОДРОБНЫЙ РАЗБОР | DOTA 2\nНОВЫЕ ИТЕМЫ ПАТЧ 7.30 | АГАНИМЫ ДОТА 2 | АНАЛИЗ НОВЫХ ПРЕДМЕТОВ"
+        },
+        "defaultAudioLanguage": "ru"
+      },
+      "statistics": {
+        "viewCount": "64248",
+        "likeCount": "2657",
+        "dislikeCount": "142",
         "favoriteCount": "0",
         "commentCount": "304"
-      }
-    },
-    {
-      "kind": "youtube#video",
-      "etag": "Evj47xYTZ9EwrgpJN2M0iVyJgr8",
-      "id": "urNjuTaQVCk",
-      "statistics": {
-        "viewCount": "121315",
-        "likeCount": "4700",
-        "dislikeCount": "58",
-        "favoriteCount": "0",
-        "commentCount": "282"
-      }
-    },
-    {
-      "kind": "youtube#video",
-      "etag": "JmCjZKh2kk9DP6xLBUSV-oOTux4",
-      "id": "_uAa2qFtP-o",
-      "statistics": {
-        "viewCount": "51419",
-        "likeCount": "986",
-        "dislikeCount": "84",
-        "favoriteCount": "0",
-        "commentCount": "80"
-      }
-    },
-    {
-      "kind": "youtube#video",
-      "etag": "CKQSDE-mvbeZ1ukmflBkI6KJDKY",
-      "id": "V_UzHYbQqlY",
-      "statistics": {
-        "viewCount": "156029",
-        "likeCount": "6122",
-        "dislikeCount": "106",
-        "favoriteCount": "0",
-        "commentCount": "358"
-      }
-    },
-    {
-      "kind": "youtube#video",
-      "etag": "L5SFvrFWgHm0wzF5dsgy8PAcPgw",
-      "id": "hGF1lAYbTYE",
-      "statistics": {
-        "viewCount": "122476",
-        "likeCount": "5434",
-        "dislikeCount": "212",
-        "favoriteCount": "0",
-        "commentCount": "318"
-      }
-    },
-    {
-      "kind": "youtube#video",
-      "etag": "VlTvlUfl4tNjVe_tgx5bVG4rBFc",
-      "id": "d8f_fBTLBkk",
-      "statistics": {
-        "viewCount": "280868",
-        "likeCount": "8704",
-        "dislikeCount": "212",
-        "favoriteCount": "0",
-        "commentCount": "294"
-      }
-    },
-    {
-      "kind": "youtube#video",
-      "etag": "7zF_oT2QROg_XVUtpUcHa_B5yY0",
-      "id": "t1iuWDKpxdU",
-      "statistics": {
-        "viewCount": "173779",
-        "likeCount": "3544",
-        "dislikeCount": "134",
-        "favoriteCount": "0",
-        "commentCount": "130"
-      }
-    },
-    {
-      "kind": "youtube#video",
-      "etag": "bIdrWHOY7nsyd8lmbKNe3yFWVH0",
-      "id": "L0NwlF5GMwc",
-      "statistics": {
-        "viewCount": "2483594",
-        "likeCount": "141223",
-        "dislikeCount": "2920",
-        "favoriteCount": "0",
-        "commentCount": "7232"
-      }
-    },
-    {
-      "kind": "youtube#video",
-      "etag": "1rm6CLdqnLMkmWuzcNC6Cyp97MY",
-      "id": "0G2u0AaV6pk",
-      "statistics": {
-        "viewCount": "113089",
-        "likeCount": "3300",
-        "dislikeCount": "76",
-        "favoriteCount": "0",
-        "commentCount": "247"
-      }
-    },
-    {
-      "kind": "youtube#video",
-      "etag": "Ac452OTrsd12PxuWslFA6oZ461U",
-      "id": "lsdN0QQj5Lk",
-      "statistics": {
-        "viewCount": "552530",
-        "likeCount": "20710",
-        "dislikeCount": "708",
-        "favoriteCount": "0",
-        "commentCount": "1106"
-      }
-    },
-    {
-      "kind": "youtube#video",
-      "etag": "Ac5_YeLEhcnStXthQoss8s3m808",
-      "id": "XscUqZd20U4",
-      "statistics": {
-        "viewCount": "132373",
-        "likeCount": "3733",
-        "dislikeCount": "106",
-        "favoriteCount": "0",
-        "commentCount": "364"
       }
     }
   ],

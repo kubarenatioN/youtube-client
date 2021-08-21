@@ -18,9 +18,9 @@ import { DetailsCardComponent } from './components/details-card/details-card.com
     VideoItemComponent,
     DetailsComponent,
     StatsComponent,
-    DetailsCardComponent,
+    DetailsCardComponent
   ],
   imports: [SharedModule, YoutubeRoutingModule, FormsModule],
-  exports: [SearchComponent],
+  exports: [SearchComponent]
 })
 export class YoutubeModule {}

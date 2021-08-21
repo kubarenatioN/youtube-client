@@ -5,11 +5,11 @@ import { SearchComponent } from './pages/search/search.component'
 
 const routes: Routes = [
   { path: '', component: SearchComponent, pathMatch: 'full' },
-  { path: ':id', component: DetailsComponent },
+  { path: ':id', component: DetailsComponent }
 ]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class YoutubeRoutingModule {}

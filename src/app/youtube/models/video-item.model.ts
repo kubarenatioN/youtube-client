@@ -1,9 +1,15 @@
-import { IVideoStats } from './video-stats.model'
-
 export interface IVideoItem {
   kind: string
   etag: string
   id: IVideoItemId
+  snippet: IVideoSnippet
+  statistics: IVideoStats
+}
+
+export interface IVideoStatsItem {
+  kind: string
+  etag: string
+  id: string
   snippet: IVideoSnippet
   statistics: IVideoStats
 }
@@ -35,7 +41,15 @@ interface IVideoThumbnail {
   height: string
 }
 
-interface IVideoItemId {
+export interface IVideoStats {
+  viewCount: string
+  likeCount: string
+  dislikeCount: string
+  favoriteCount: string
+  commentCount: string
+}
+
+export interface IVideoItemId {
   kind: string
   videoId: string
 }

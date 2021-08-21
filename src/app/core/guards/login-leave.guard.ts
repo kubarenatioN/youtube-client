@@ -3,7 +3,7 @@ import {
   ActivatedRouteSnapshot,
   CanDeactivate,
   RouterStateSnapshot,
-  UrlTree,
+  UrlTree
 } from '@angular/router'
 import { Observable } from 'rxjs'
 
@@ -12,7 +12,7 @@ export interface CanLeaveComponent {
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class LoginLeaveGuard implements CanDeactivate<CanLeaveComponent> {
   canDeactivate(
@@ -24,9 +24,6 @@ export class LoginLeaveGuard implements CanDeactivate<CanLeaveComponent> {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    // console.log('can leave?', component.canLeave())
-    // console.log(activatedRoute)
-    // console.log(router)
     return component.canLeave()
   }
 }

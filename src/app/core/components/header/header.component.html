@@ -6,7 +6,11 @@
 
     <div class="search-container">
       <form (submit)="$event.preventDefault()">
-        <input (input)="onSearch()" [(ngModel)]="query" [ngModelOptions]="{standalone: true}"/>
+        <input
+          (input)="onSearch()"
+          [(ngModel)]="query"
+          [ngModelOptions]="{ standalone: true }"
+        />
       </form>
       <button *ngIf="isSearchPage" (click)="toggleSort()" class="btn-icon">
         <img src="../assets/images/settings.svg" alt="Settings" />
@@ -16,22 +20,28 @@
     </div>
 
     <div class="profile-wrapper">
-    <a routerLink="/login" class="profile-link">
-      <span>{{username}}</span>
-      <img
-        class="profile-img"
-        src="../assets/images/profile.svg"
-        alt="Profile Icon"
-      />
-    </a>
-    <button
-    *ngIf="isUserLogged"
-    (click)="logoutUser()"
-    class="btn-primary btn-auth">Logout</button>
-    <button
-    *ngIf="!isUserLogged"
-    (click)="navigateToLoginPage()"
-    class="btn-primary btn-auth">Login</button>
+      <a routerLink="/login" class="profile-link">
+        <span>{{ username }}</span>
+        <img
+          class="profile-img"
+          src="../assets/images/profile.svg"
+          alt="Profile Icon"
+        />
+      </a>
+      <button
+        *ngIf="isUserLogged"
+        (click)="logoutUser()"
+        class="btn-primary btn-auth"
+      >
+        Logout
+      </button>
+      <button
+        *ngIf="!isUserLogged"
+        (click)="navigateToLoginPage()"
+        class="btn-primary btn-auth"
+      >
+        Login
+      </button>
     </div>
   </div>
 </header>

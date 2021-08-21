@@ -1,17 +1,16 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { Subscription } from 'rxjs'
-import { debounceTime } from 'rxjs/operators'
-import { IVideoItem } from '../../models/video-item.model'
+import { IVideoStatsItem } from '../../models/video-item.model'
 import { SearchService } from '../../services/search.service'
 import { SortbarManagerService } from '../../services/sortbar-manager.service'
 
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
-  styleUrls: ['./catalog.component.scss'],
+  styleUrls: ['./catalog.component.scss']
 })
 export class CatalogComponent implements OnInit, OnDestroy {
-  videos: IVideoItem[] = []
+  videos: IVideoStatsItem[] = []
 
   videosSubscription!: Subscription
 
@@ -23,18 +22,16 @@ export class CatalogComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.videosSubscription = this.searchService.videos$
-      // .pipe(debounceTime(1000))
-      .subscribe(data => {
-        // console.log('data received')
-        this.videos = data
-      })
+    this.videos = this.searchService.videoItems
+    this.videosSubscription = this.searchService.videos$.subscribe(data => {
+      this.videos = data
+    })
     this.sortOptionsSubscription = this.sortService.options$.subscribe(() => {
       this.videos = [...this.videos]
     })
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.videosSubscription.unsubscribe()
     this.sortOptionsSubscription.unsubscribe()
   }

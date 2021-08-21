@@ -1,22 +1,23 @@
 <div
-*ngIf="video"
-[appDateHighlighter]="video.snippet.publishedAt"
-class="wrapper">
-  <img [src]="video.snippet.thumbnails.high.url" alt="Video Poster">
+  *ngIf="video"
+  [appDateHighlighter]="video.snippet.publishedAt"
+  class="wrapper"
+>
+  <img [src]="video.snippet.thumbnails.high.url" alt="Video Poster" />
   <div class="text">
     <div class="heading">
-      <h2 class="title">{{video.snippet.title}}</h2>
-      <p class="upload-date">{{video.snippet.publishedAt | date:'EEEE, MMMM d, y'}}</p>
+      <h2 class="title">{{ video.snippet.title }}</h2>
+      <p class="upload-date">
+        {{ video.snippet.publishedAt | date: "EEEE, MMMM d, y" }}
+      </p>
     </div>
     <div class="descr">
       <h4 class="title">Description:</h4>
       <div class="descr-text">
-      <p *ngFor="let v of video.snippet.description.split('\n')">
-        <a
-        [href]="v"
-        *ngIf="v.includes('http'); else text">{{v}}</a>
-        <ng-template #text>{{v}}</ng-template>
-      </p>
+        <p *ngFor="let v of video.snippet.description.split('\n')">
+          <a [href]="v" *ngIf="v.includes('http'); else text">{{ v }}</a>
+          <ng-template #text>{{ v }}</ng-template>
+        </p>
       </div>
     </div>
     <app-stats [stats]="video.statistics"></app-stats>

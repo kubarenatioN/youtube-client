@@ -1,17 +1,17 @@
 import { Pipe, PipeTransform } from '@angular/core'
-import { SortType, SortOrder } from 'src/app/youtube/models/sort-options.model'
-import { IVideoItem } from 'src/app/youtube/models/video-item.model'
+import { SortOrder, SortType } from 'src/app/youtube/models/sort-options.model'
+import { IVideoStatsItem } from 'src/app/youtube/models/video-item.model'
 import { SortbarManagerService } from 'src/app/youtube/services/sortbar-manager.service'
 
 @Pipe({
-  name: 'sort',
+  name: 'sort'
 })
 export class SortPipe implements PipeTransform {
-  private videos: IVideoItem[] = []
+  private videos: IVideoStatsItem[] = []
 
   constructor(private sortService: SortbarManagerService) {}
 
-  transform(value: IVideoItem[]): IVideoItem[] {
+  transform(value: IVideoStatsItem[]): IVideoStatsItem[] {
     const { type, order } = this.sortService.options.sort
     switch (type) {
       case SortType.Date:
@@ -27,17 +27,23 @@ export class SortPipe implements PipeTransform {
     return this.videos
   }
 
-  private sortByDate(a: IVideoItem, b: IVideoItem, order: SortOrder): number {
+  private sortByDate(
+    a: IVideoStatsItem,
+    b: IVideoStatsItem,
+    order: SortOrder
+  ): number {
     const res =
       new Date(a.snippet.publishedAt).getTime() -
       new Date(b.snippet.publishedAt).getTime()
-    if (order === 'asc') return -res
-    return res
+    return order === 'asc' ? -res : res
   }
 
-  private sortByViews(a: IVideoItem, b: IVideoItem, order: SortOrder): number {
+  private sortByViews(
+    a: IVideoStatsItem,
+    b: IVideoStatsItem,
+    order: SortOrder
+  ): number {
     const res = Number(b.statistics.viewCount) - Number(a.statistics.viewCount)
-    if (order === 'asc') return -res
-    return res
+    return order === 'asc' ? -res : res
   }
 }

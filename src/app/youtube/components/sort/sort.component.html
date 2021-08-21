@@ -1,22 +1,42 @@
 <div class="sort-wrapper" [class.visible]="isVisible">
   <div class="container sort-container">
     <span>Sort by</span>
-    <button class="btn-primary" (click)="setSortType(1)" [ngClass]="{
+    <button
+      class="btn-primary"
+      (click)="setSortType(1)"
+      [ngClass]="{
         desc: classes.activeDate && classes.order === 'desc',
         asc: classes.activeDate && classes.order === 'asc'
-      }">
+      }"
+    >
       Date
     </button>
-    <button class="btn-primary" (click)="setSortType(2)" [ngClass]="{
+    <button
+      class="btn-primary"
+      (click)="setSortType(2)"
+      [ngClass]="{
         desc: classes.activeViewsCount && classes.order === 'desc',
         asc: classes.activeViewsCount && classes.order === 'asc'
-      }">Views count</button>
+      }"
+    >
+      Views count
+    </button>
     <div>
-      <button class="btn-primary" (click)="setFilterByWord()" [class.active]="classes.activeByKeywords">
+      <button
+        class="btn-primary"
+        (click)="setFilterByWord()"
+        [class.active]="classes.activeByKeywords"
+      >
         Key word
       </button>
-      <input class="keyword-filter" type="text" #keywordsInput [disabled]="!classes.activeByKeywords"
-        (input)="onFilterInput($event)" [value]="classes.activeByKeywords ? keywordsInput.value : ''" />
+      <input
+        class="keyword-filter"
+        type="text"
+        #keywordsInput
+        [disabled]="!classes.activeByKeywords"
+        (input)="onFilterInput($event)"
+        [value]="classes.activeByKeywords ? keywordsInput.value : ''"
+      />
     </div>
   </div>
 </div>

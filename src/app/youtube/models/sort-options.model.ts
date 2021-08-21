@@ -2,7 +2,7 @@ export enum SortType {
   None,
   Date,
   ViewsCount,
-  KeyWord,
+  KeyWord
 }
 
 export type SortOrder = 'desc' | 'asc'
