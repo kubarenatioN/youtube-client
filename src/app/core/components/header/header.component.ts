@@ -25,19 +25,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private searchService: SearchService,
     private loginService: LoginService,
     private router: Router
-  ) {
-    router.events
-      .pipe(filter((e: Event): e is RouterEvent => e instanceof NavigationEnd))
-      .subscribe((e: RouterEvent) => {
-        this.isSearchPage = e.url === '/search'
-      })
-  }
+  ) {}
 
   ngOnInit(): void {
     this.isSearchPage = this.router.url === '/search'
     this.userSubscription = this.loginService.user$.subscribe(() => {
       this.isUserLogged = this.loginService.isUserLogged
     })
+    this.router.events
+      .pipe(filter((e: Event): e is RouterEvent => e instanceof NavigationEnd))
+      .subscribe((e: RouterEvent) => {
+        this.isSearchPage = (e as NavigationEnd).urlAfterRedirects === '/search'
+      })
   }
 
   ngOnDestroy(): void {
