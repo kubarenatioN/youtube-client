@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Observable, Subject } from 'rxjs'
+import { Subject } from 'rxjs'
 import { delay } from 'rxjs/operators'
 import { IUser } from '../models/user.model'
 
@@ -11,13 +11,9 @@ const LOCAL_STORAGE_USER = 'user'
 export class LoginService {
   private currentUser = this.getUser()
 
-  user$!: Observable<IUser | null>
-
   private user$$ = new Subject<IUser | null>()
 
-  constructor() {
-    this.user$ = this.user$$.pipe(delay(1000))
-  }
+  user$ = this.user$$.pipe(delay(1000))
 
   private getUser(): IUser | null {
     const userString = localStorage.getItem(LOCAL_STORAGE_USER)

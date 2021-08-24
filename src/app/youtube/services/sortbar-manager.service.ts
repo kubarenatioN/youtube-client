@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { BehaviorSubject, Observable } from 'rxjs'
+import { BehaviorSubject } from 'rxjs'
 import { ISortOptions, SortOrder, SortType } from '../models/sort-options.model'
 
 export interface ISortButtonsClasses {
@@ -13,11 +13,7 @@ export interface ISortButtonsClasses {
   providedIn: 'root',
 })
 export class SortbarManagerService {
-  isSortVisible = false
-
-  sortVisibility$!: Observable<boolean>
-
-  private sortVisibility$$ = new BehaviorSubject<boolean>(this.isSortVisible)
+  // isSortVisible = false
 
   private sortOptions: ISortOptions = {
     sort: {
@@ -27,14 +23,13 @@ export class SortbarManagerService {
     keywords: '',
   }
 
-  options$ = new Observable<ISortOptions>()
+  private sortVisibility$$ = new BehaviorSubject<boolean>(false)
 
   private options$$ = new BehaviorSubject(this.sortOptions)
 
-  constructor() {
-    this.sortVisibility$ = this.sortVisibility$$.asObservable()
-    this.options$ = this.options$$.asObservable()
-  }
+  sortVisibility$ = this.sortVisibility$$.asObservable()
+
+  options$ = this.options$$.asObservable()
 
   setSortOptions(sortType: SortType): void {
     const { type, order } = this.sortOptions.sort
@@ -53,8 +48,8 @@ export class SortbarManagerService {
   }
 
   toggle(): void {
-    this.isSortVisible = !this.isSortVisible
-    this.sortVisibility$$.next(this.isSortVisible)
+    const visibility = !this.sortVisibility$$.value
+    this.sortVisibility$$.next(visibility)
   }
 
   get classes(): ISortButtonsClasses {

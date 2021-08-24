@@ -8,11 +8,13 @@ import { SearchHttpService } from './search-http.service'
   providedIn: 'root',
 })
 export class SearchService {
-  videos: IVideoItem[] = []
+  private videos$$ = new Subject<IVideoItem[]>()
 
-  videos$ = new Subject<IVideoItem[]>()
+  private videoDetails$$ = new Subject<IVideoItem | undefined>()
 
-  videoDetails$ = new Subject<IVideoItem | undefined>()
+  videos$ = this.videos$$.asObservable()
+
+  videoDetails$ = this.videoDetails$$.asObservable()
 
   constructor(private searchHttp: SearchHttpService) {
     this.getVideos()
@@ -23,8 +25,7 @@ export class SearchService {
       .getVideos()
       .pipe(map(response => response.items))
       .subscribe(videos => {
-        this.videos = videos
-        this.videos$.next(this.videos)
+        this.videos$$.next(videos)
       })
   }
 
@@ -36,7 +37,7 @@ export class SearchService {
         map(items => items.find(it => it.id === id))
       )
       .subscribe(video => {
-        this.videoDetails$.next(video)
+        this.videoDetails$$.next(video)
       })
   }
 }
