@@ -1,0 +1,71 @@
+import { Injectable } from '@angular/core'
+import { BehaviorSubject } from 'rxjs'
+import { ISortOptions, SortOrder, SortType } from '../models/sort-options.model'
+
+export interface ISortButtonsClasses {
+  activeDate: boolean
+  activeViewsCount: boolean
+  activeByKeywords: boolean
+  order: SortOrder
+}
+
+@Injectable({
+  providedIn: 'root',
+})
+export class SortbarManagerService {
+  // isSortVisible = false
+
+  private sortOptions: ISortOptions = {
+    sort: {
+      type: SortType.None,
+      order: 'desc',
+    },
+    keywords: '',
+  }
+
+  private sortVisibility$$ = new BehaviorSubject<boolean>(false)
+
+  private options$$ = new BehaviorSubject(this.sortOptions)
+
+  sortVisibility$ = this.sortVisibility$$.asObservable()
+
+  options$ = this.options$$.asObservable()
+
+  setSortOptions(sortType: SortType): void {
+    const { type, order } = this.sortOptions.sort
+    if (type === sortType) {
+      this.sortOptions.sort.order = order === 'desc' ? 'asc' : 'desc'
+    } else {
+      this.sortOptions.sort.type = sortType
+      this.sortOptions.sort.order = 'desc'
+    }
+    this.emitNewOptions()
+  }
+
+  setKeywords(keywords: string): void {
+    this.sortOptions.keywords = keywords
+    this.emitNewOptions()
+  }
+
+  toggle(): void {
+    const visibility = !this.sortVisibility$$.value
+    this.sortVisibility$$.next(visibility)
+  }
+
+  get classes(): ISortButtonsClasses {
+    return {
+      activeDate: this.sortOptions.sort.type === SortType.Date,
+      activeViewsCount: this.sortOptions.sort.type === SortType.ViewsCount,
+      activeByKeywords: this.sortOptions.sort.type === SortType.KeyWord,
+      order: this.sortOptions.sort.order,
+    }
+  }
+
+  get options(): ISortOptions {
+    return this.sortOptions
+  }
+
+  emitNewOptions(): void {
+    this.options$$.next(this.sortOptions)
+  }
+}

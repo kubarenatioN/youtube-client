@@ -1,0 +1,19 @@
+:host {
+  width: 100%;
+}
+.stats {
+  max-width: 220px;
+  width: 100%;
+  margin: 20px auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  div {
+    display: flex;
+    align-items: center;
+  }
+  span {
+    padding-left: 4px;
+    font-size: 11px;
+  }
+}
