@@ -1,9 +1,9 @@
-<div class="sort-wrapper" [class.visible]="isVisible">
+<div class="sort-wrapper" [class.visible]="sortVisibility$ | async">
   <div class="container sort-container">
     <span>Sort by</span>
     <button
       class="btn-primary"
-      (click)="setSortType(1)"
+      (click)="setSortType(sortType.Date)"
       [ngClass]="{
         desc: classes.activeDate && classes.order === 'desc',
         asc: classes.activeDate && classes.order === 'asc'
@@ -13,7 +13,7 @@
     </button>
     <button
       class="btn-primary"
-      (click)="setSortType(2)"
+      (click)="setSortType(sortType.ViewsCount)"
       [ngClass]="{
         desc: classes.activeViewsCount && classes.order === 'desc',
         asc: classes.activeViewsCount && classes.order === 'asc'

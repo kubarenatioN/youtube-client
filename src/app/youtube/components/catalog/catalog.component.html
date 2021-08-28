@@ -1,16 +1,28 @@
-<div class="container" *ngIf="youtubeVideos.length || customVideos.length; else noVideos">
+<div
+  class="container"
+  *ngIf="youtubeVideos.length || customVideos.length; else noVideos"
+>
   <div class="videos__container">
-    <div class="video__item" *ngFor="let video of customVideos">
-      <app-custom-item [video]="video">
-      </app-custom-item>
+    <div 
+    class="video__item" 
+    *ngFor="let video of customVideos">
+      <app-custom-item [video]="video"> </app-custom-item>
     </div>
 
-    <div class="video__item" *ngFor="let video of youtubeVideos | filterByKeyword | sort">
-      <app-video-item [video]="video">
-      </app-video-item>
+    <div
+      class="video__item"
+      *ngFor="let video of youtubeVideos | filterByKeyword | sort"
+    >
+      <app-video-item [video]="video"> </app-video-item>
     </div>
   </div>
-  <button *ngIf="youtubeVideos.length" class="btn-primary btn-loadmore btn-shadow" (click)="loadMoreVideos()">Load more</button>
+  <button
+    *ngIf="youtubeVideos.length"
+    class="btn-primary btn-loadmore btn-shadow"
+    (click)="loadMoreVideos()"
+  >
+    Load more
+  </button>
 </div>
 <ng-template #noVideos>
   <p class="container">No videos...</p>

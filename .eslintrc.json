@@ -17,6 +17,7 @@
         "plugin:prettier/recommended"
       ],
       "rules": {
+        "arrow-body-style": ["error", "as-needed"],
         "class-methods-use-this": "off",
         "arrow-parens": "off",
         "prettier/prettier": [

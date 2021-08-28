@@ -13,11 +13,9 @@ export interface ISortButtonsClasses {
   providedIn: 'root'
 })
 export class SortbarManagerService {
-  isSortVisible = false
-
   sortVisibility$!: Observable<boolean>
 
-  private sortVisibility$$ = new BehaviorSubject<boolean>(this.isSortVisible)
+  private sortVisibility$$ = new BehaviorSubject<boolean>(false)
 
   private sortOptions: ISortOptions = {
     sort: {
@@ -59,8 +57,7 @@ export class SortbarManagerService {
   }
 
   toggle(): void {
-    this.isSortVisible = !this.isSortVisible
-    this.sortVisibility$$.next(this.isSortVisible)
+    this.sortVisibility$$.next(!this.sortVisibility$$.value)
   }
 
   get classes(): ISortButtonsClasses {

@@ -15,8 +15,6 @@
       <button *ngIf="isSearchPage" (click)="toggleSort()" class="btn-icon">
         <img src="../assets/images/settings.svg" alt="Settings" />
       </button>
-      <!-- <a class="btn-primary" routerLink="/login">login</a>
-      <a class="btn-primary" routerLink="/search">search</a> -->
     </div>
 
     <div class="profile-wrapper">
@@ -29,14 +27,14 @@
         />
       </a>
       <button
-        *ngIf="isUserLogged"
+        *ngIf="(user$ | async) !== null"
         (click)="logoutUser()"
         class="btn-primary btn-auth"
       >
         Logout
       </button>
       <button
-        *ngIf="!isUserLogged"
+        *ngIf="(user$ | async) === null"
         (click)="navigateToLoginPage()"
         class="btn-primary btn-auth"
       >

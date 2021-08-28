@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { Subscription } from 'rxjs'
 import { SortType } from '../../models/sort-options.model'
 import {
@@ -11,8 +11,10 @@ import {
   templateUrl: './sort.component.html',
   styleUrls: ['./sort.component.scss']
 })
-export class SortComponent implements OnInit, OnDestroy {
-  isVisible!: boolean
+export class SortComponent {
+  sortVisibility$ = this.sortService.sortVisibility$
+
+  sortType = SortType
 
   get classes(): ISortButtonsClasses {
     return this.sortService.classes
@@ -21,13 +23,6 @@ export class SortComponent implements OnInit, OnDestroy {
   private sortVisibilitySubscription!: Subscription
 
   constructor(private sortService: SortbarManagerService) {}
-
-  ngOnInit(): void {
-    this.sortVisibilitySubscription =
-      this.sortService.sortVisibility$.subscribe(isVisible => {
-        this.isVisible = isVisible
-      })
-  }
 
   setSortType(sortType: SortType): void {
     this.sortService.setSortOptions(sortType)
@@ -40,9 +35,5 @@ export class SortComponent implements OnInit, OnDestroy {
   onFilterInput(e: Event): void {
     const keywords = (e.target as HTMLInputElement).value
     this.sortService.setKeywords(keywords)
-  }
-
-  ngOnDestroy(): void {
-    this.sortVisibilitySubscription.unsubscribe()
   }
 }

@@ -24,15 +24,9 @@ export class SearchService {
 
   private videosQuery$$ = new Subject<string>()
 
-  private videoItems: IVideoStatsItem[] = []
-
   private videoDetails$$ = new Subject<IVideoStatsItem | null>()
 
   videoDetails$ = this.videoDetails$$.asObservable()
-
-  get currentVideos(): IVideoStatsItem[] {
-    return this.videoItems
-  }
 
   constructor(
     private httpService: YoutubeHttpService,
@@ -42,21 +36,14 @@ export class SearchService {
       .pipe(
         debounceTime(1000),
         distinctUntilChanged(),
-        switchMap(query => {
-          return this.httpService.getVideos(query)
-        }),
+        switchMap(query => this.httpService.getVideos(query)),
         tap(res => {
           this.nextPageToken = res.nextPageToken
         }),
         pluck('items'),
         map(items => items.map(v => v.id.videoId).join(',')),
-        switchMap(ids => {
-          return this.httpService.getStatistics(ids)
-        }),
-        pluck('items'),
-        tap(videos => {
-          this.videoItems = videos
-        })
+        switchMap(ids => this.httpService.getStatistics(ids)),
+        pluck('items')
       )
       .subscribe(videos => {
         this.store.dispatch(
@@ -90,9 +77,7 @@ export class SearchService {
         }),
         pluck('items'),
         map(items => items.map(v => v.id.videoId).join(',')),
-        switchMap(ids => {
-          return this.httpService.getStatistics(ids)
-        }),
+        switchMap(ids => this.httpService.getStatistics(ids)),
         pluck('items')
       )
       .subscribe(videos => {
