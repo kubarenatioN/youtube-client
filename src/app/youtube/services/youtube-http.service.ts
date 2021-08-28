@@ -19,8 +19,10 @@ export class YoutubeHttpService {
     private configService: HttpConfigService
   ) {}
 
-  getVideos(query: string, nextPageToken?: string): Observable<IVideosResponse> {
-    console.log(nextPageToken)
+  getVideos(
+    query: string,
+    nextPageToken?: string
+  ): Observable<IVideosResponse> {
     return this.configService.getConfig().pipe(
       switchMap(() => {
         // return this.http.get<IVideosResponse>('./assets/response.json')

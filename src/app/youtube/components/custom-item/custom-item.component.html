@@ -4,6 +4,8 @@
     [src]="video.imageUrl"
     alt="Video Poster"
   />
+  
   <h4 class="title">{{ video.title }}</h4>
-  <a class="more-link btn-link btn-shadow" [routerLink]="video.videoUrl">More</a>
+  <p class="descr">{{video.description}}</p>
+  <a class="more-link btn-link btn-shadow" [routerLink]="video.videoId">More</a>
 </div>

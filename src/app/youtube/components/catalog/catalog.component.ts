@@ -2,8 +2,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core'
 import { Store } from '@ngrx/store'
 import { Subscription } from 'rxjs'
 import { IVideoCard } from 'src/app/admin/models/video-card.model'
-import { allVideos } from 'src/app/redux/selectors/videos.selectors'
-import { AppState, EVideoType } from 'src/app/redux/state/app.state'
+import {
+  apiVideos,
+  customVideos
+} from 'src/app/redux/selectors/videos.selectors'
+import { AppState } from 'src/app/redux/state/app.state'
 import { IVideoStatsItem } from '../../models/video-item.model'
 import { SearchService } from '../../services/search.service'
 import { SortbarManagerService } from '../../services/sortbar-manager.service'
@@ -14,13 +17,17 @@ import { SortbarManagerService } from '../../services/sortbar-manager.service'
   styleUrls: ['./catalog.component.scss']
 })
 export class CatalogComponent implements OnInit, OnDestroy {
-  videos: (IVideoStatsItem | IVideoCard)[] = []
+  youtubeVideos: IVideoStatsItem[] = []
 
-  videoType = EVideoType
+  customVideos: IVideoCard[] = []
 
-  videos$ = this.store.select(allVideos)
+  youtubeVideos$ = this.store.select(apiVideos)
+
+  customVideos$ = this.store.select(customVideos)
 
   videosSubscription!: Subscription
+
+  customVideosSubscription!: Subscription
 
   sortOptionsSubscription!: Subscription
 
@@ -31,31 +38,24 @@ export class CatalogComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.videosSubscription = this.videos$.subscribe(videos => {
-      console.log('catalog:', videos)
-      this.videos = videos
+    this.videosSubscription = this.youtubeVideos$.subscribe(videos => {
+      this.youtubeVideos = videos
+    })
+    this.customVideosSubscription = this.customVideos$.subscribe(videos => {
+      this.customVideos = videos
     })
     this.sortOptionsSubscription = this.sortService.options$.subscribe(() => {
-      this.videos = [...this.videos]
+      this.youtubeVideos = [...this.youtubeVideos]
     })
   }
 
   ngOnDestroy(): void {
     this.videosSubscription.unsubscribe()
+    this.customVideosSubscription.unsubscribe()
     this.sortOptionsSubscription.unsubscribe()
   }
 
   loadMoreVideos(): void {
     this.searchService.loadMoreVideos()
-  }
-
-  // isYoutubeVideo = (item: { kind: string }): item is IVideoStatsItem =>
-  //   item.kind === EVideoType.Youtube
-
-  // isCustomVideo = (item: { kind: string }): item is IVideoCard =>
-  //   item.kind === EVideoType.Custom
-
-  convert<T>(item: unknown): T {
-    return item as T
   }
 }

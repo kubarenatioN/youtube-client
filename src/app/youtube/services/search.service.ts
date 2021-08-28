@@ -26,19 +26,18 @@ export class SearchService {
 
   private videoItems: IVideoStatsItem[] = []
 
-  // private videos$$ = new Subject<IVideoStatsItem[]>()
-
   private videoDetails$$ = new Subject<IVideoStatsItem | null>()
-
-  // videos$ = this.videos$$.asObservable()
 
   videoDetails$ = this.videoDetails$$.asObservable()
 
-  get currentVideos() {
+  get currentVideos(): IVideoStatsItem[] {
     return this.videoItems
   }
 
-  constructor(private httpService: YoutubeHttpService, private store: Store<AppState>) {
+  constructor(
+    private httpService: YoutubeHttpService,
+    private store: Store<AppState>
+  ) {
     this.videosQuery$$
       .pipe(
         debounceTime(1000),
@@ -46,7 +45,9 @@ export class SearchService {
         switchMap(query => {
           return this.httpService.getVideos(query)
         }),
-        tap(res => this.nextPageToken = res.nextPageToken),
+        tap(res => {
+          this.nextPageToken = res.nextPageToken
+        }),
         pluck('items'),
         map(items => items.map(v => v.id.videoId).join(',')),
         switchMap(ids => {
@@ -58,11 +59,11 @@ export class SearchService {
         })
       )
       .subscribe(videos => {
-        console.log('from search', videos)
-        this.store.dispatch(getVideos({
-          videos
-        }))
-        // this.videos$$.next(this.videoItems)
+        this.store.dispatch(
+          getVideos({
+            videos
+          })
+        )
       })
   }
 
@@ -80,19 +81,26 @@ export class SearchService {
       })
   }
 
-  loadMoreVideos() {
-    this.httpService.getVideos(this.query, this.nextPageToken).pipe(
-      tap(res => this.nextPageToken = res.nextPageToken),
-      pluck('items'),
-      map(items => items.map(v => v.id.videoId).join(',')),
-      switchMap(ids => {
-        return this.httpService.getStatistics(ids)
-      }),
-      pluck('items')
-    ).subscribe(videos => {
-      this.store.dispatch(addVideos({
-        videos
-      }))
-    })
+  loadMoreVideos(): void {
+    this.httpService
+      .getVideos(this.query, this.nextPageToken)
+      .pipe(
+        tap(res => {
+          this.nextPageToken = res.nextPageToken
+        }),
+        pluck('items'),
+        map(items => items.map(v => v.id.videoId).join(',')),
+        switchMap(ids => {
+          return this.httpService.getStatistics(ids)
+        }),
+        pluck('items')
+      )
+      .subscribe(videos => {
+        this.store.dispatch(
+          addVideos({
+            videos
+          })
+        )
+      })
   }
 }

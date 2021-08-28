@@ -6,5 +6,5 @@
   />
   <app-stats *ngIf="video.statistics" [stats]="video.statistics"></app-stats>
   <h4 class="title">{{ video.snippet.title }}</h4>
-  <a class="more-link btn-link btn-shadow" [routerLink]="video.id">More</a>
+  <a class="more-link btn-link btn-shadow" [routerLink]="[video.id]">More</a>
 </div>

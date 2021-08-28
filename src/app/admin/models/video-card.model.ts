@@ -3,6 +3,6 @@ export interface IVideoCard {
   title: string
   description: string
   imageUrl: string
-  videoUrl: string
+  videoId: string
   creationDate: string
 }
