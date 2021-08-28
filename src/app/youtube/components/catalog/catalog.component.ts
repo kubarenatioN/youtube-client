@@ -22,7 +22,6 @@ export class CatalogComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.videos = this.searchService.videoItems
     this.videosSubscription = this.searchService.videos$.subscribe(data => {
       this.videos = data
     })

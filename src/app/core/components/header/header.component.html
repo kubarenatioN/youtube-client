@@ -29,14 +29,14 @@
         />
       </a>
       <button
-        *ngIf="isUserLogged"
+        *ngIf="(user$ | async) !== null"
         (click)="logoutUser()"
         class="btn-primary btn-auth"
       >
         Logout
       </button>
       <button
-        *ngIf="!isUserLogged"
+        *ngIf="(user$ | async) === null"
         (click)="navigateToLoginPage()"
         class="btn-primary btn-auth"
       >

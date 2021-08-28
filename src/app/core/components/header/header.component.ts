@@ -1,24 +1,23 @@
-import { Component, OnDestroy, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Event, NavigationEnd, Router, RouterEvent } from '@angular/router'
-import { Subscription } from 'rxjs'
 import { filter } from 'rxjs/operators'
 import { LoginService } from 'src/app/auth/services/login.service'
 import { SearchService } from 'src/app/youtube/services/search.service'
 import { SortbarManagerService } from 'src/app/youtube/services/sortbar-manager.service'
+
+const MIN_CHARS_TO_START_SEARCHING = 3
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit {
   isSearchPage = false
-
-  userSubscription!: Subscription
 
   query = ''
 
-  isUserLogged!: boolean
+  user$ = this.loginService.user$
 
   constructor(
     private sortService: SortbarManagerService,
@@ -29,9 +28,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.isSearchPage = this.router.url === '/search'
-    this.userSubscription = this.loginService.user$.subscribe(() => {
-      this.isUserLogged = this.loginService.isUserLogged
-    })
     this.router.events
       .pipe(filter((e: Event): e is RouterEvent => e instanceof NavigationEnd))
       .subscribe((e: RouterEvent) => {
@@ -39,16 +35,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
       })
   }
 
-  ngOnDestroy(): void {
-    this.userSubscription.unsubscribe()
-  }
-
   toggleSort(): void {
     this.sortService.toggle()
   }
 
   onSearch(): void {
-    if (this.query.length > 2 && this.isSearchPage) {
+    if (
+      this.query.length >= MIN_CHARS_TO_START_SEARCHING &&
+      this.isSearchPage
+    ) {
       this.searchService.getVideos(this.query)
     }
   }

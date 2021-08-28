@@ -12,11 +12,10 @@
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
         "airbnb-typescript/base",
-        // "prettier"
-        // "prettier/@typescript-eslint"
         "plugin:prettier/recommended"
       ],
       "rules": {
+        "arrow-body-style": ["error", "as-needed"],
         "class-methods-use-this": "off",
         "arrow-parens": "off",
         "prettier/prettier": [

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { Router } from '@angular/router'
-import { BehaviorSubject, Observable } from 'rxjs'
+import { BehaviorSubject } from 'rxjs'
 import { delay } from 'rxjs/operators'
 import { IUser } from '../models/user.model'
 
@@ -12,9 +12,9 @@ const LOCAL_STORAGE_USER = 'user'
 export class LoginService {
   private currentUser = this.getUser()
 
-  user$ = new Observable<IUser | null>()
-
   private user$$ = new BehaviorSubject<IUser | null>(this.currentUser)
+
+  user$ = this.user$$.pipe(delay(500))
 
   get isUserLogged(): boolean {
     return !!this.currentUser
@@ -24,9 +24,7 @@ export class LoginService {
     return this.currentUser ? this.currentUser.login : null
   }
 
-  constructor(private router: Router) {
-    this.user$ = this.user$$.pipe(delay(500))
-  }
+  constructor(private router: Router) {}
 
   private getUser(): IUser | null {
     const userString = localStorage.getItem(LOCAL_STORAGE_USER)
