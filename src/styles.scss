@@ -40,6 +40,8 @@ button.btn-primary {
   background-color: var(--accent-color);
   color: #fff;
   border: none;
+  padding: 4px 10px;
+  font-size: 14px;
   &:disabled {
     opacity: 0.5;
     cursor: default;
@@ -88,5 +90,8 @@ a.btn-link {
   background-color: var(--accent-color);
   padding: 7px 30px 6px;
   border-radius: 5px;
+}
+
+.btn-shadow {
   box-shadow: var(--btn-primary-box-shadow);
 }

@@ -8,7 +8,8 @@ import { DetailsComponent } from './pages/details/details.component'
 import { SharedModule } from '../shared/shared.module'
 import { YoutubeRoutingModule } from './youtube-routing.module'
 import { StatsComponent } from './components/stats/stats.component'
-import { DetailsCardComponent } from './components/details-card/details-card.component'
+import { DetailsCardComponent } from './components/details-card/details-card.component';
+import { CustomItemComponent } from './components/custom-item/custom-item.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DetailsCardComponent } from './components/details-card/details-card.com
     VideoItemComponent,
     DetailsComponent,
     StatsComponent,
-    DetailsCardComponent
+    DetailsCardComponent,
+    CustomItemComponent
   ],
   imports: [SharedModule, YoutubeRoutingModule, FormsModule],
   exports: [SearchComponent]

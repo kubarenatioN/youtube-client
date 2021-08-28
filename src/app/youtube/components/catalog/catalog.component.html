@@ -1,12 +1,22 @@
-<div class="container">
-  <div class="videos__container" *ngIf="videos.length; else noVideos">
-    <app-video-item
-      *ngFor="let video of videos | filterByKeyword | sort"
-      [video]="video"
-    >
-    </app-video-item>
+<div class="container" *ngIf="videos.length; else noVideos">
+  <div class="videos__container">
+    <div class="video__item" *ngFor="let video of videos"
+    [ngSwitch]="video.kind">
+        
+        <app-video-item 
+        *ngSwitchCase="videoType.Youtube"
+        [video]="convert(video)">
+        </app-video-item>
+
+        <app-custom-item 
+        *ngSwitchCase="videoType.Custom"
+        [video]="convert(video)">
+        </app-custom-item>
+        
+    </div>
   </div>
-  <ng-template #noVideos>
-    <p>No videos...</p>
-  </ng-template>
+  <button class="btn-primary btn-loadmore btn-shadow" (click)="loadMoreVideos()">Load more</button>
 </div>
+<ng-template #noVideos>
+  <p class="container">No videos...</p>
+</ng-template>

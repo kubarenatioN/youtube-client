@@ -1,7 +1,3 @@
-:host {
-  max-width: 270px;
-  width: 100%;
-}
 .video-card {
   display: flex;
   flex-direction: column;
@@ -41,10 +37,14 @@
 }
 
 .title {
-  margin: 10px auto;
+  margin: 0 auto;
   text-align: center;
   color: #4f4f4f;
   font-size: 20px;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 3.6em;
   font-weight: 700;
 }
 

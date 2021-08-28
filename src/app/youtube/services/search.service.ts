@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core'
+import { Store } from '@ngrx/store'
 import { Subject } from 'rxjs'
 import {
   debounceTime,
@@ -8,6 +9,8 @@ import {
   switchMap,
   tap
 } from 'rxjs/operators'
+import { addVideos, getVideos } from 'src/app/redux/actions/videos.actions'
+import { AppState } from 'src/app/redux/state/app.state'
 import { IVideoStatsItem } from '../models/video-item.model'
 import { YoutubeHttpService } from './youtube-http.service'
 
@@ -15,19 +18,27 @@ import { YoutubeHttpService } from './youtube-http.service'
   providedIn: 'root'
 })
 export class SearchService {
+  private query = ''
+
+  private nextPageToken?: string
+
   private videosQuery$$ = new Subject<string>()
 
-  videoItems: IVideoStatsItem[] = []
+  private videoItems: IVideoStatsItem[] = []
 
-  private videos$$ = new Subject<IVideoStatsItem[]>()
+  // private videos$$ = new Subject<IVideoStatsItem[]>()
 
   private videoDetails$$ = new Subject<IVideoStatsItem | null>()
 
-  videos$ = this.videos$$.asObservable()
+  // videos$ = this.videos$$.asObservable()
 
   videoDetails$ = this.videoDetails$$.asObservable()
 
-  constructor(private httpService: YoutubeHttpService) {
+  get currentVideos() {
+    return this.videoItems
+  }
+
+  constructor(private httpService: YoutubeHttpService, private store: Store<AppState>) {
     this.videosQuery$$
       .pipe(
         debounceTime(1000),
@@ -35,6 +46,7 @@ export class SearchService {
         switchMap(query => {
           return this.httpService.getVideos(query)
         }),
+        tap(res => this.nextPageToken = res.nextPageToken),
         pluck('items'),
         map(items => items.map(v => v.id.videoId).join(',')),
         switchMap(ids => {
@@ -45,13 +57,18 @@ export class SearchService {
           this.videoItems = videos
         })
       )
-      .subscribe(() => {
-        this.videos$$.next(this.videoItems)
+      .subscribe(videos => {
+        console.log('from search', videos)
+        this.store.dispatch(getVideos({
+          videos
+        }))
+        // this.videos$$.next(this.videoItems)
       })
   }
 
   getVideos(query: string): void {
-    this.videosQuery$$.next(query)
+    this.query = query
+    this.videosQuery$$.next(this.query)
   }
 
   getById(id: string): void {
@@ -61,5 +78,21 @@ export class SearchService {
       .subscribe(video => {
         this.videoDetails$$.next(video)
       })
+  }
+
+  loadMoreVideos() {
+    this.httpService.getVideos(this.query, this.nextPageToken).pipe(
+      tap(res => this.nextPageToken = res.nextPageToken),
+      pluck('items'),
+      map(items => items.map(v => v.id.videoId).join(',')),
+      switchMap(ids => {
+        return this.httpService.getStatistics(ids)
+      }),
+      pluck('items')
+    ).subscribe(videos => {
+      this.store.dispatch(addVideos({
+        videos
+      }))
+    })
   }
 }
